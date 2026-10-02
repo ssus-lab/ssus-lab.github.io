@@ -1,0 +1,10 @@
+{{ define "main" }}
+<div class="wrap">
+  <header class="page-head">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.lede }}<p class="lede measure">{{ . }}</p>{{ end }}
+  </header>
+  {{ with .Content }}<div class="article measure">{{ . }}</div>{{ end }}
+  {{ partial "rows.html" .Pages }}
+</div>
+{{ end }}

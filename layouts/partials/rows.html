@@ -1,0 +1,12 @@
+{{/* A listing as rows on rules: title, one-line summary, and a status or role at right. */}}
+<ul class="rows">
+  {{ range . }}
+  <li>
+    <span class="title">
+      <a href="{{ .RelPermalink }}">{{ if .Params.code }}<code>{{ .Title }}</code>{{ else }}{{ .Title }}{{ end }}</a>
+    </span>
+    {{ with .Params.status | default .Params.role }}<span class="meta">{{ . }}</span>{{ end }}
+    {{ with .Params.summary }}<p class="summary">{{ . }}</p>{{ end }}
+  </li>
+  {{ end }}
+</ul>

@@ -1,0 +1,151 @@
+/* SSUS site. Tokens follow ssus-lab-brand/quarto/_brand.yml and _brand-dark.yml. */
+
+:root {
+  --ground: #F8F9F7;      /* plan white */
+  --ink: #16232E;         /* survey ink */
+  --ink-2: #3D4B55;
+  --muted: #5C6B74;       /* slate */
+  --rule: #D5DCE0;
+  --accent: #0F3B5E;      /* blueprint */
+  --band: #0F3B5E;
+  --band-ink: #F8F9F7;
+  --band-muted: #9DBBD6;  /* sky */
+  --foot: #0F3B5E;
+  --o-ab: #0F3B5E;
+  --o-c: #8FA1AB;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground: #101821;
+    --ink: #E6EBEA;
+    --ink-2: #C3CDD2;
+    --muted: #8FA1AB;
+    --rule: #25313B;
+    --accent: #7FAFD4;
+    --band: #0F3B5E;
+    --band-ink: #F8F9F7;
+    --band-muted: #9DBBD6;
+    --foot: #0F3B5E;
+    --o-ab: #9DBBD6;
+    --o-c: #5C6B74;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: "Libre Franklin", "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+
+.eyebrow, .site-nav a, .meta, .colophon {
+  font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+.measure { max-width: 42rem; }
+
+/* header */
+.site-header { border-bottom: 1px solid var(--rule); }
+.site-header .bar {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px 24px; min-height: 84px; flex-wrap: wrap; padding-block: 12px;
+}
+.site-header .lockup img { display: block; height: 80px; width: auto; margin: -10px 0 -10px -14px; }
+.site-nav { display: flex; gap: 22px; flex-wrap: wrap; }
+.site-nav a {
+  color: var(--ink); text-decoration: none;
+  font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+}
+.site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--accent); }
+
+/* home */
+.eyebrow {
+  font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--muted); margin: 0 0 18px;
+}
+.statement { padding: 88px 0 72px; }
+.statement h1 {
+  font-size: clamp(30px, 4.4vw, 46px); line-height: 1.14; font-weight: 800;
+  letter-spacing: -0.015em; margin: 0 0 28px; max-width: 24ch;
+}
+.statement .body { font-size: 19px; color: var(--ink-2); }
+.statement .grid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 56px; align-items: start; }
+.statement .orders { width: 100%; height: auto; margin-top: 40px; }
+.statement .body p { margin: 0 0 1em; }
+
+.band { background: var(--band); color: var(--band-ink); padding: 56px 0 60px; }
+.band .eyebrow { color: var(--band-muted); }
+.themes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 40px; margin: 0; }
+.themes div { border-top: 1px solid rgba(248, 249, 247, .28); padding-top: 16px; }
+.themes dt { font-weight: 700; font-size: 18px; margin-bottom: 6px; }
+.themes dd { margin: 0; color: var(--band-muted); font-size: 16px; line-height: 1.55; }
+
+/* listings: rows on rules, not cards */
+.section { padding: 56px 0 8px; }
+.section-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  border-bottom: 1px solid var(--ink); padding-bottom: 10px; margin-bottom: 4px;
+}
+.section-head h2 {
+  font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  font-size: 13px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; margin: 0;
+}
+.section-head a { font-size: 14px; }
+.rows { list-style: none; margin: 0; padding: 0; }
+.rows li {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 24px;
+  padding: 18px 0; border-bottom: 1px solid var(--rule);
+}
+.rows .title { font-weight: 700; font-size: 18px; line-height: 1.35; }
+.rows .title a { color: var(--ink); text-decoration: none; }
+.rows .title a:hover { color: var(--accent); }
+.rows .title code { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 17px; font-weight: 500; }
+.rows .summary { grid-column: 1; color: var(--ink-2); margin: 0; }
+.rows .meta {
+  grid-column: 2; grid-row: 1; font-size: 12px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--muted); align-self: baseline; white-space: nowrap;
+}
+
+/* inner pages */
+.page-head { padding: 64px 0 24px; }
+.page-head h1 { font-size: clamp(28px, 3.6vw, 38px); line-height: 1.15; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; }
+.page-head .lede { font-size: 19px; color: var(--ink-2); margin: 0; }
+.page-head .meta { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin: 0; }
+.article { padding-bottom: 24px; }
+.article blockquote { margin: 1.4em 0; padding-left: 18px; border-left: 2px solid var(--accent); color: var(--ink-2); }
+.article ul { padding-left: 1.2em; }
+.links { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 8px; }
+
+/* footer */
+.site-footer { background: var(--foot); color: #C3CDD2; margin-top: 72px; padding: 40px 0 28px; }
+.site-footer .inner { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+.site-footer img { display: block; height: 72px; width: auto; margin: -8px 0 -8px -12px; }
+.site-footer .tagline { margin: 10px 0 0; font-size: 16px; font-weight: 600; color: #F8F9F7; }
+.site-footer nav { display: flex; gap: 20px; flex-wrap: wrap; }
+.site-footer nav a { color: #C3CDD2; text-decoration: none; font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+.site-footer nav a:hover { color: #F8F9F7; }
+.colophon { margin-top: 28px; padding-top: 16px; border-top: 1px solid rgba(248, 249, 247, .14); font-size: 12px; color: #8FA1AB; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+@media (max-width: 760px) {
+  .wrap { padding: 0 16px; }
+  .statement { padding: 56px 0 48px; }
+  .statement .body { font-size: 17px; }
+  .themes { grid-template-columns: 1fr; gap: 24px; }
+  .rows li { grid-template-columns: 1fr; }
+  .rows .meta { grid-column: 1; grid-row: auto; }
+  .site-header .lockup img { height: 64px; margin-left: -11px; }
+  .statement .grid { grid-template-columns: 1fr; }
+  .statement .orders { display: none; }
+}

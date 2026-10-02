@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="wrap">
+  <header class="page-head">
+    <h1>{{ if .Params.code }}<code>{{ .Title }}</code>{{ else }}{{ .Title }}{{ end }}</h1>
+    {{ with .Params.status | default .Params.role }}<p class="meta">{{ . }}{{ with $.Params.authors }} · {{ . }}{{ end }}</p>{{ end }}
+  </header>
+  <article class="article measure">
+    {{ .Content }}
+    {{ with .Params.links }}
+    <div class="links">{{ range . }}<a href="{{ .url }}">{{ .label }}</a>{{ end }}</div>
+    {{ end }}
+  </article>
+</div>
+{{ end }}

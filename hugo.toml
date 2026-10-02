@@ -1,0 +1,35 @@
+baseURL = "/"
+relativeURLs = true
+title = "Spatial Science and Urban Systems"
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  university = "UC Irvine"
+  tagline = "Open spatial science for public decisions."
+  statement = "We build open-source methods, models, and software for understanding sociospatial structure."
+  department = "Department of Urban Planning and Public Policy"
+  github = "https://github.com/ssus-lab"
+  director = "Elijah Knaap"
+
+[menus]
+  [[menus.main]]
+    name = "People"
+    pageRef = "/people"
+    weight = 30
+  [[menus.main]]
+    name = "Research"
+    pageRef = "/research"
+    weight = 10
+  [[menus.main]]
+    name = "Software"
+    pageRef = "/software"
+    weight = 20
+  [[menus.main]]
+    name = "Contact"
+    pageRef = "/contact"
+    weight = 40
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

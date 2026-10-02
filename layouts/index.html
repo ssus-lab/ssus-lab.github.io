@@ -1,0 +1,41 @@
+{{ define "main" }}
+
+<section class="statement">
+  <div class="wrap grid">
+    <div>
+      <p class="eyebrow">{{ site.Params.department }} · {{ site.Params.university }}</p>
+      <h1>{{ .Params.statement }}</h1>
+      <div class="body measure">{{ .Content }}</div>
+    </div>
+    {{ partial "orders.html" . }}
+  </div>
+</section>
+
+{{ with site.GetPage "/research" }}
+<section class="band" aria-labelledby="themes-head">
+  <div class="wrap">
+    <p class="eyebrow" id="themes-head">What we study</p>
+    <dl class="themes">
+      {{ range .Params.themes }}
+      <div><dt>{{ .term }}</dt><dd>{{ .gloss }}</dd></div>
+      {{ end }}
+    </dl>
+  </div>
+</section>
+{{ end }}
+
+<div class="wrap">
+  {{ range slice "research" "software" "people" }}
+  {{ with site.GetPage (printf "/%s" .) }}
+  <section class="section">
+    <div class="section-head">
+      <h2>{{ .Params.short | default .Title }}</h2>
+      <a href="{{ .RelPermalink }}">All {{ lower .Title }}</a>
+    </div>
+    {{ partial "rows.html" .Pages }}
+  </section>
+  {{ end }}
+  {{ end }}
+</div>
+
+{{ end }}
