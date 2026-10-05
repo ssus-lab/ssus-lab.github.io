@@ -1,0 +1,10 @@
+{{/* Publication rows from data/publications.yaml. Pass a list of entries. */}}
+<ul class="rows pubs">
+  {{ range . }}
+  <li>
+    <span class="title">{{ with .doi }}<a href="https://doi.org/{{ . }}">{{ end }}{{ .title }}{{ if .doi }}</a>{{ end }}</span>
+    {{ with .year }}<span class="meta">{{ . }}</span>{{ end }}
+    <p class="summary">{{ .authors }}{{ with .venue }}. <em>{{ . }}</em>{{ end }}</p>
+  </li>
+  {{ end }}
+</ul>

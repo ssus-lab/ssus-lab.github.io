@@ -1,0 +1,73 @@
+# Selected publications, newest first. Titles, authors, and DOIs checked against
+# Crossref; years are the journal issue years. `home: true` puts an entry on
+# the home page.
+
+book:
+  title: "Urban Analysis and Spatial Science: Theory, Methods, & Code for Studying Neighborhoods, Cities, & Regions"
+  authors: "Elijah Knaap"
+  venue: "CRC Press, forthcoming 2027"
+  url: "https://knaaptime.com/urban_analysis"
+  note: "Draft online"
+
+working:
+  - title: "Separated, Polarized, and Factioned?"
+    authors: "Elijah Knaap and Sergio Rey"
+    note: "Income segregation in the United States, measured at every spatial scale the data admit."
+
+articles:
+  - title: "segregation: Segregation Analysis, Inference, and Decomposition in Python"
+    authors: "Renan X. Cortes, Elijah Knaap, Sergio J. Rey"
+    venue: "Journal of Open Source Software"
+    year: 2026
+    doi: "10.21105/joss.11126"
+    home: true
+  - title: "Exploring Space-Time Interactions in Fatal Opioid Overdoses"
+    authors: "Sergio J. Rey, Elijah Knaap, Alejandra Cabral, Jennifer Syvertsen"
+    venue: "Geographical Analysis"
+    year: 2025
+    doi: "10.1111/gean.70019"
+    home: true
+  - title: "The emergence of fentanyl in a stimulant landscape: Un/intentional use, social relations, and developing communities of care"
+    authors: "Jennifer Syvertsen, Alejandra Cabral, Elijah Knaap, Sergio Rey, Robin A. Pollini"
+    venue: "International Journal of Drug Policy"
+    year: 2025
+    doi: "10.1016/j.drugpo.2025.104807"
+  - title: "Segregated by design? Street network topological structure and the measurement of urban segregation"
+    authors: "Elijah Knaap and Sergio Rey"
+    venue: "Environment and Planning B: Urban Analytics and City Science"
+    year: 2024
+    doi: "10.1177/23998083231197956"
+    home: true
+  - title: "Measuring two decades of urban spatial structure: The evolution of agglomeration economies in American metros"
+    authors: "Elijah Knaap and Sergio Rey"
+    venue: "Computers, Environment and Urban Systems"
+    year: 2024
+    doi: "10.1016/j.compenvurbsys.2024.102116"
+    home: true
+  - title: "The Legacy of Redlining: A Spatial Dynamics Perspective"
+    authors: "Sergio J. Rey and Elijah Knaap"
+    venue: "International Regional Science Review"
+    year: 2024
+    doi: "10.1177/01600176221116566"
+    home: true
+  - title: "Changes in the economic status of neighbourhoods in US metropolitan areas from 1980 to 2010: Stability, growth and polarisation"
+    authors: "Wei Kang, Elijah Knaap, Sergio Rey"
+    venue: "Urban Studies"
+    year: 2022
+    doi: "10.1177/00420980211042549"
+  - title: "Efficient regionalization for spatially explicit neighborhood delineation"
+    authors: "Ran Wei, Sergio Rey, Elijah Knaap"
+    venue: "International Journal of Geographical Information Science"
+    year: 2021
+    doi: "10.1080/13658816.2020.1759806"
+  - title: "Opportunity for Whom? The Diverse Definitions of Neighborhood Opportunity in Baltimore"
+    authors: "Willow S. Lung-Amam, Elijah Knaap, Casey Dawkins, Gerrit-Jan Knaap"
+    venue: "City & Community"
+    year: 2018
+    doi: "10.1111/cico.12318"
+  - title: "The Cartography of Opportunity: Spatial Data Science for Equitable Urban Policy"
+    authors: "Elijah Knaap"
+    venue: "Housing Policy Debate"
+    year: 2017
+    doi: "10.1080/10511482.2017.1331930"
+    home: true

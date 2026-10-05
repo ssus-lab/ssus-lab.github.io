@@ -2,7 +2,9 @@
 <div class="wrap">
   <header class="page-head">
     <h1>{{ if .Params.code }}<code>{{ .Title }}</code>{{ else }}{{ .Title }}{{ end }}</h1>
-    {{ with .Params.status | default .Params.role }}<p class="meta">{{ . }}{{ with $.Params.authors }} · {{ . }}{{ end }}</p>{{ end }}
+    {{ $meta := slice }}
+    {{ range slice .Params.years .Params.funder .Params.role }}{{ with . }}{{ $meta = $meta | append . }}{{ end }}{{ end }}
+    {{ with $meta }}<p class="meta">{{ delimit . " · " }}</p>{{ end }}
   </header>
   <article class="article measure">
     {{ .Content }}

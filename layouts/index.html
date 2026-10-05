@@ -11,30 +11,47 @@
   </div>
 </section>
 
-{{ with site.GetPage "/research" }}
-<section class="band" aria-labelledby="themes-head">
+<section class="band" aria-labelledby="areas-head">
   <div class="wrap">
-    <p class="eyebrow" id="themes-head">What we study</p>
-    <dl class="themes">
-      {{ range .Params.themes }}
-      <div><dt>{{ .term }}</dt><dd>{{ .gloss }}</dd></div>
+    <p class="eyebrow" id="areas-head">Research areas</p>
+    <div class="themes">
+      {{ range .Params.areas }}
+      <div>
+        <h3>{{ .name }}</h3>
+        <ul>{{ range .topics }}<li>{{ . }}</li>{{ end }}</ul>
+      </div>
       {{ end }}
-    </dl>
+    </div>
   </div>
 </section>
-{{ end }}
 
 <div class="wrap">
-  {{ range slice "research" "software" "people" }}
-  {{ with site.GetPage (printf "/%s" .) }}
+  {{ with site.GetPage "/projects" }}
   <section class="section">
-    <div class="section-head">
-      <h2>{{ .Params.short | default .Title }}</h2>
-      <a href="{{ .RelPermalink }}">All {{ lower .Title }}</a>
-    </div>
-    {{ partial "rows.html" .Pages }}
+    <div class="section-head"><h2>{{ .Title }}</h2><a href="{{ .RelPermalink }}">All projects</a></div>
+    {{ partial "rows.html" (first 4 .Pages.ByWeight) }}
   </section>
   {{ end }}
+
+  {{ with site.GetPage "/publications" }}
+  <section class="section">
+    <div class="section-head"><h2>Selected publications</h2><a href="{{ .RelPermalink }}">All publications</a></div>
+    {{ partial "pubs.html" (where hugo.Data.publications.articles "home" true) }}
+  </section>
+  {{ end }}
+
+  {{ with site.GetPage "/software" }}
+  <section class="section">
+    <div class="section-head"><h2>{{ .Title }}</h2><a href="{{ .RelPermalink }}">All software</a></div>
+    {{ partial "software-groups.html" . }}
+  </section>
+  {{ end }}
+
+  {{ with site.GetPage "/people" }}
+  <section class="section">
+    <div class="section-head"><h2>{{ .Title }}</h2><a href="{{ .RelPermalink }}">All people</a></div>
+    {{ partial "rows.html" .Pages }}
+  </section>
   {{ end }}
 </div>
 

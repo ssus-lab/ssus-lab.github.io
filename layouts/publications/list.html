@@ -1,0 +1,35 @@
+{{ define "main" }}
+{{ $d := hugo.Data.publications }}
+<div class="wrap">
+  <header class="page-head">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.lede }}<p class="lede measure">{{ . }}</p>{{ end }}
+  </header>
+  {{ with .Content }}<div class="article measure">{{ . }}</div>{{ end }}
+
+  <section class="section">
+    <div class="section-head"><h2>Book</h2></div>
+    <ul class="rows pubs">
+      <li>
+        <span class="title"><a href="{{ $d.book.url }}">{{ $d.book.title }}</a></span>
+        <span class="meta">{{ $d.book.note }}</span>
+        <p class="summary">{{ $d.book.authors }}. <em>{{ $d.book.venue }}</em></p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>Articles</h2></div>
+    {{ partial "pubs.html" $d.articles }}
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>Working papers</h2></div>
+    <ul class="rows pubs">
+      {{ range $d.working }}
+      <li><span class="title">{{ .title }}</span><p class="summary">{{ .authors }}. {{ .note }}</p></li>
+      {{ end }}
+    </ul>
+  </section>
+</div>
+{{ end }}

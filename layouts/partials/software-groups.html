@@ -1,0 +1,9 @@
+{{/* Software pages grouped by the org named in each page's `org`, in the order the section's `groups` lists. */}}
+{{ $pages := .Pages }}
+{{ range .Params.groups }}
+  {{ $key := .key }}
+  <div class="group">
+    <p class="group-head"><a href="{{ .url }}">{{ .name }}</a> <span>{{ .blurb }}</span></p>
+    {{ partial "rows.html" (where $pages "Params.org" $key).ByWeight }}
+  </div>
+{{ end }}

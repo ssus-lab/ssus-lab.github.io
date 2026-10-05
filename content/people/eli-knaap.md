@@ -12,8 +12,11 @@ links:
 ---
 
 Assistant Professor of Urban Planning and Public Policy at the University of
-California, Irvine. Core developer for the
-[PySAL](https://pysal.org) ecosystem.
+California, Irvine, and a faculty affiliate of the
+[Center for Population, Inequality, and Policy](https://www.cpip.uci.edu/about.php)
+and the [Institute of Transportation Studies](https://its.uci.edu/about/). Lead
+developer of [geosnap](https://github.com/oturns/geosnap), and a core developer
+and steering committee member of [PySAL](https://pysal.org).
 
 > Trained in stratification sociology, urban economics, and quantitative
 > geography, I am a spatial data scientist studying social inequality and
