@@ -10,6 +10,7 @@ disableKinds = ["taxonomy", "term"]
   department = "Department of Urban Planning and Public Policy"
   github = "https://github.com/ssus-lab"
   director = "Elijah Knaap"
+  googleAnalyticsID = "G-VN9V62G43D"
 
 [menus]
   [[menus.main]]
