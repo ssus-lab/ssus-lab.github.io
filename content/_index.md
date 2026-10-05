@@ -22,8 +22,8 @@ figure:
 
 SSUS is the research lab of [Elijah Knaap](people/eli-knaap/) at the
 University of California, Irvine, and the institutional home of
-[oturns](https://github.com/oturns), its open-source software for urban
-analytics. We study who lives where and why: how households sort across
+[oturns](https://github.com/oturns), open tools for urban, regional, and
+neighborhood science. We study who lives where and why: how households sort across
 neighborhoods, how housing and land markets price location, and how the
 resulting patterns of segregation and opportunity change over time.
 

@@ -3,6 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    /* Apply a saved theme before first paint; with none saved, CSS follows the system. */
+    try { var t = localStorage.getItem("ssus-theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
   <title>{{ if .IsHome }}{{ site.Title }} · {{ site.Params.university }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.tagline }} {{ site.Params.statement }}{{ end }}">
   {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
@@ -17,16 +21,18 @@
 <header class="site-header">
   <div class="wrap bar">
     <a class="lockup" href="{{ "/" | relURL }}" aria-label="Spatial Science and Urban Systems, home">
-      <picture>
-        <source srcset="{{ "img/ssus-horizontal-night.svg" | relURL }}" media="(prefers-color-scheme: dark)">
-        <img src="{{ "img/ssus-horizontal-light.svg" | relURL }}" alt="Spatial Science and Urban Systems, UC Irvine">
-      </picture>
+      <img class="when-light" src="{{ "img/ssus-horizontal-light.svg" | relURL }}" alt="Spatial Science and Urban Systems, UC Irvine">
+      <img class="when-dark" src="{{ "img/ssus-horizontal-night.svg" | relURL }}" alt="Spatial Science and Urban Systems, UC Irvine">
     </a>
     <nav class="site-nav" aria-label="Main">
       {{ $current := . }}
       {{ range site.Menus.main }}
         <a href="{{ .URL }}"{{ if $current.IsMenuCurrent "main" . }} aria-current="page"{{ end }}>{{ .Name }}</a>
       {{ end }}
+      <button class="theme-toggle" type="button" aria-label="Switch color theme">
+        <svg class="when-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+        <svg class="when-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+      </button>
     </nav>
   </div>
 </header>
@@ -54,5 +60,21 @@
   </div>
 </footer>
 
+<script>
+  (function () {
+    var root = document.documentElement, btn = document.querySelector(".theme-toggle");
+    var mq = window.matchMedia("(prefers-color-scheme: dark)");
+    function current() { return root.dataset.theme || (mq.matches ? "dark" : "light"); }
+    function label() { btn.setAttribute("aria-label", current() === "dark" ? "Switch to light theme" : "Switch to dark theme"); }
+    btn.addEventListener("click", function () {
+      var next = current() === "dark" ? "light" : "dark";
+      root.dataset.theme = next;
+      try { localStorage.setItem("ssus-theme", next); } catch (e) {}
+      label();
+    });
+    if (mq.addEventListener) mq.addEventListener("change", label);
+    label();
+  })();
+</script>
 </body>
 </html>

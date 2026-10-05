@@ -17,8 +17,9 @@
   color-scheme: light;
 }
 
+/* Dark: the system preference, unless the reader chose light; or the reader chose dark. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --ground: #101821;
     --ink: #E6EBEA;
     --ink-2: #C3CDD2;
@@ -34,6 +35,22 @@
     --chip-bg: #1C2731;
     color-scheme: dark;
   }
+}
+:root[data-theme="dark"] {
+  --ground: #101821;
+  --ink: #E6EBEA;
+  --ink-2: #C3CDD2;
+  --muted: #8FA1AB;
+  --rule: #25313B;
+  --accent: #7FAFD4;
+  --band: #0F3B5E;
+  --band-ink: #F8F9F7;
+  --band-muted: #9DBBD6;
+  --foot: #0F3B5E;
+  --o-ab: #9DBBD6;
+  --o-c: #5C6B74;
+  --chip-bg: #1C2731;
+  color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
@@ -60,6 +77,15 @@ a:hover { text-decoration-thickness: 2px; }
 .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 .measure { max-width: 42rem; }
 
+/* theme-dependent elements: the light version shows unless dark is in force */
+.when-dark { display: none !important; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .when-light { display: none !important; }
+  :root:not([data-theme="light"]) .when-dark { display: block !important; }
+}
+:root[data-theme="dark"] .when-light { display: none !important; }
+:root[data-theme="dark"] .when-dark { display: block !important; }
+
 /* header */
 .site-header { border-bottom: 1px solid var(--rule); }
 .site-header .bar {
@@ -73,6 +99,15 @@ a:hover { text-decoration-thickness: 2px; }
   font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
 }
 .site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--accent); }
+.site-nav { align-items: center; }
+.theme-toggle {
+  display: inline-grid; place-items: center; width: 34px; height: 34px; padding: 0;
+  border: 1px solid var(--rule); border-radius: 999px; background: transparent;
+  color: var(--ink); cursor: pointer;
+}
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+.theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.theme-toggle svg { width: 17px; height: 17px; }
 
 /* home */
 .eyebrow {
