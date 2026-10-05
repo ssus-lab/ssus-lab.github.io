@@ -1,6 +1,5 @@
 ---
 title: "Publications"
-lede: "Selected work from the lab and its collaborators."
 ---
 
 The complete list is on
