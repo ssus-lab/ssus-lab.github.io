@@ -1,0 +1,17 @@
+{{/* Projects as image cards. Pages without an image get the lattice figure as a placeholder. */}}
+<div class="cards">
+  {{ range . }}
+  {{ $p := . }}
+  <a class="card" href="{{ .RelPermalink }}">
+    <div class="plate{{ if eq .Params.fit "contain" }} contain{{ end }}">
+      {{ with .Params.image }}<img src="{{ . | relURL }}" alt="{{ $p.Params.alt }}" loading="lazy">{{ else }}{{ partial "orders.html" . }}{{ end }}
+    </div>
+    <div class="card-body">
+      {{ with .Params.years | default .Params.status }}<p class="eyebrow">{{ . }}</p>{{ end }}
+      <h3>{{ .Title }}</h3>
+      {{ with .Params.summary }}<p class="summary">{{ . }}</p>{{ end }}
+      {{ with .Params.funder }}<p class="fine">{{ . }}</p>{{ end }}
+    </div>
+  </a>
+  {{ end }}
+</div>

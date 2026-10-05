@@ -1,0 +1,12 @@
+{{/* Home-page publications: the year set large beside each citation, two columns. */}}
+<ol class="pubgrid">
+  {{ range . }}
+  <li>
+    <span class="year">{{ .year }}</span>
+    <div>
+      <a class="ptitle" href="https://doi.org/{{ .doi }}">{{ .title }}</a>
+      <p class="pmeta">{{ .authors }} · <em>{{ .venue }}</em></p>
+    </div>
+  </li>
+  {{ end }}
+</ol>

@@ -17,26 +17,41 @@
     <div class="themes">
       {{ range .Params.areas }}
       <div>
+        {{ partial "icon.html" .icon }}
         <h3>{{ .name }}</h3>
-        <ul>{{ range .topics }}<li>{{ . }}</li>{{ end }}</ul>
+        <ul class="chips">{{ range .topics }}<li>{{ . }}</li>{{ end }}</ul>
       </div>
       {{ end }}
     </div>
   </div>
 </section>
 
+{{ with .Params.figure }}
+<section class="feature">
+  <div class="wrap feature-grid">
+    <figure class="plate wide"><img src="{{ .image | relURL }}" alt="{{ .alt }}" loading="lazy"></figure>
+    <div>
+      <p class="eyebrow">From the work</p>
+      <h2>{{ .title }}</h2>
+      <p>{{ .text }}</p>
+      <a href="{{ .link | relURL }}">{{ .linktext }} <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+{{ end }}
+
 <div class="wrap">
   {{ with site.GetPage "/projects" }}
   <section class="section">
     <div class="section-head"><h2>{{ .Title }}</h2><a href="{{ .RelPermalink }}">All projects</a></div>
-    {{ partial "rows.html" (first 4 .Pages.ByWeight) }}
+    {{ partial "cards.html" .Pages.ByWeight }}
   </section>
   {{ end }}
 
   {{ with site.GetPage "/publications" }}
   <section class="section">
     <div class="section-head"><h2>Selected publications</h2><a href="{{ .RelPermalink }}">All publications</a></div>
-    {{ partial "pubs.html" (where hugo.Data.publications.articles "home" true) }}
+    {{ partial "pubs-home.html" (where hugo.Data.publications.articles "home" true) }}
   </section>
   {{ end }}
 
@@ -49,8 +64,8 @@
 
   {{ with site.GetPage "/people" }}
   <section class="section">
-    <div class="section-head"><h2>{{ .Title }}</h2><a href="{{ .RelPermalink }}">All people</a></div>
-    {{ partial "rows.html" .Pages }}
+    <div class="section-head"><h2>{{ .Title }}</h2></div>
+    <div class="people">{{ range .Pages }}{{ partial "person.html" . }}{{ end }}</div>
   </section>
   {{ end }}
 </div>

@@ -1,7 +1,11 @@
 ---
 title: "Software"
-lede: "SSUS is the institutional home of oturns, the lab's open-source software for urban analytics. The lab also leads several packages in the PySAL federation."
+lede: "SSUS is the institutional home of oturns, the lab's open-source software for urban analytics. The lab also builds its own numerical and statistical tools and leads several packages in the PySAL federation."
 groups:
+  - key: ssus
+    name: "SSUS"
+    url: ""
+    blurb: "Numerical and statistical tools developed in the lab."
   - key: oturns
     name: "oturns"
     url: "https://github.com/oturns"

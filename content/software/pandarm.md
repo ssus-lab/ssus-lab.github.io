@@ -1,6 +1,7 @@
 ---
 title: "pandarm"
 code: true
+pypi: true
 org: oturns
 weight: 2
 role: "Lead"

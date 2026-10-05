@@ -1,6 +1,7 @@
 ---
 title: "tobler"
 code: true
+pypi: true
 org: pysal
 weight: 2
 role: "Lead"

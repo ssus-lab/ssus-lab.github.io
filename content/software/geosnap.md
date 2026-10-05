@@ -1,6 +1,7 @@
 ---
 title: "geosnap"
 code: true
+pypi: true
 org: oturns
 weight: 1
 role: "Lead"

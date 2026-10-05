@@ -6,6 +6,12 @@
     {{ range slice .Params.years .Params.funder .Params.role }}{{ with . }}{{ $meta = $meta | append . }}{{ end }}{{ end }}
     {{ with $meta }}<p class="meta">{{ delimit . " · " }}</p>{{ end }}
   </header>
+  {{ with .Params.image }}
+  <figure class="plate hero-fig{{ if eq $.Params.fit "contain" }} contain{{ end }}">
+    <img src="{{ . | relURL }}" alt="{{ $.Params.alt }}">
+    {{ with $.Params.caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+  </figure>
+  {{ end }}
   <article class="article measure">
     {{ .Content }}
     {{ with .Params.links }}

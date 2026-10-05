@@ -1,6 +1,7 @@
 ---
 title: "segregation"
 code: true
+pypi: true
 org: pysal
 weight: 1
 role: "Lead"

@@ -1,0 +1,9 @@
+{{/* A person: monogram tile, name, role, summary. Pass the person page. */}}
+<a class="person" href="{{ .RelPermalink }}">
+  <span class="monogram" aria-hidden="true">{{ range split .Title " " }}{{ substr . 0 1 }}{{ end }}</span>
+  <span>
+    <span class="pname">{{ .Title }}</span>
+    {{ with .Params.role }}<span class="chip">{{ . }}</span>{{ end }}
+    {{ with .Params.summary }}<span class="psum">{{ . }}</span>{{ end }}
+  </span>
+</a>

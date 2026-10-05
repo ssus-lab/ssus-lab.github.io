@@ -1,9 +1,28 @@
-{{/* Software pages grouped by the org named in each page's `org`, in the order the section's `groups` lists. */}}
+{{/* Software as tiles, grouped by each page's `org`, in the order the section's `groups` lists. Pass the software section page. */}}
 {{ $pages := .Pages }}
 {{ range .Params.groups }}
-  {{ $key := .key }}
+  {{ $members := (where $pages "Params.org" .key).ByWeight }}
+  {{ if $members }}
   <div class="group">
-    <p class="group-head"><a href="{{ .url }}">{{ .name }}</a> <span>{{ .blurb }}</span></p>
-    {{ partial "rows.html" (where $pages "Params.org" $key).ByWeight }}
+    <p class="group-head">
+      {{ if .url }}<a href="{{ .url }}">{{ .name }}</a>{{ else }}<strong>{{ .name }}</strong>{{ end }}
+      <span>{{ .blurb }}</span>
+    </p>
+    <div class="tiles">
+      {{ range $members }}
+      <div class="tile">
+        <div class="tile-head">
+          <a href="{{ .RelPermalink }}"><code>{{ .Title }}</code></a>
+          {{ with .Params.role }}<span class="chip">{{ . }}</span>{{ end }}
+        </div>
+        {{ with .Params.summary }}<p class="summary">{{ . }}</p>{{ end }}
+        <div class="tile-foot">
+          {{ if .Params.pypi }}<code class="install">pip install {{ .Title }}</code>{{ end }}
+          {{ with .Params.repo }}<a class="repo" href="{{ . }}">Source <span aria-hidden="true">↗</span></a>{{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
   </div>
+  {{ end }}
 {{ end }}

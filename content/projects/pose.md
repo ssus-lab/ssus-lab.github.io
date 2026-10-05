@@ -5,6 +5,9 @@ years: "Current · 2024–2027"
 role: "Co-PI (PI: Sergio Rey)"
 weight: 1
 summary: "Long-term viability for an open-source ecosystem for spatial data science, with PySAL at its core."
+image: "img/fig/pysal-logo.webp"
+alt: "The PySAL logo: a central node branching into colored clusters of packages."
+fit: contain
 ---
 
 The project builds the ecosystem around [PySAL](https://pysal.org): library
