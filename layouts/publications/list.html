@@ -18,6 +18,17 @@
     </ul>
   </section>
 
+  {{ with $d.forthcoming }}
+  <section class="section">
+    <div class="section-head"><h2>Forthcoming</h2></div>
+    <ul class="rows pubs">
+      {{ range . }}
+      <li><span class="title">{{ if .page }}<a href="{{ .page | relURL }}">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</span><p class="summary">{{ .authors }}. <em>{{ .venue }}</em></p></li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+
   <section class="section">
     <div class="section-head"><h2>Articles</h2></div>
     {{ partial "pubs.html" $d.articles }}
@@ -27,7 +38,7 @@
     <div class="section-head"><h2>Working papers</h2></div>
     <ul class="rows pubs">
       {{ range $d.working }}
-      <li><span class="title">{{ .title }}</span><p class="summary">{{ .authors }}. {{ .note }}</p></li>
+      <li><span class="title">{{ if .page }}<a href="{{ .page | relURL }}">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</span><p class="summary">{{ .authors }}. {{ .note }}</p></li>
       {{ end }}
     </ul>
   </section>

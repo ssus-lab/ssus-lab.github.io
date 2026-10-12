@@ -1,6 +1,14 @@
 {{ define "main" }}
 <div class="wrap">
   <header class="page-head"><h1>{{ .Title }}</h1></header>
-  {{ partial "cards.html" .Pages.ByWeight }}
+  {{ range slice "Current" "Completed" }}
+    {{ $status := . }}
+    {{ with (where $.Pages "Params.status" $status).ByWeight }}
+    <section class="section">
+      <div class="section-head"><h2>{{ $status }}</h2></div>
+      {{ partial "cards.html" . }}
+    </section>
+    {{ end }}
+  {{ end }}
 </div>
 {{ end }}

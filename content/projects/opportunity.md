@@ -1,7 +1,7 @@
 ---
 title: "Modeling the Geography of Opportunity for Fair Housing Policy"
 status: "Completed"
-weight: 6
+weight: 5
 summary: "Opportunity models behind HUD's evaluation of the Baltimore Housing Mobility Program and the Baltimore regional plan."
 image: "img/fig/bhmp-opportunity.svg"
 alt: "Line chart of mean neighborhood opportunity scores from 2003 to 2013 for three types of housing assistance; the Baltimore Housing Mobility Program line rises well above housing choice vouchers and public housing."
@@ -10,7 +10,7 @@ caption: "Mean neighborhood opportunity score by type of housing assistance, Bal
 ---
 
 The geography of opportunity names the ways neighborhoods shape outcomes over the
-life course. Eli's models of it formed the foundation of HUD's
+life course. Knaap's models of it formed the foundation of HUD's
 [formal evaluation](https://www.huduser.gov/portal/portal/sites/default/files/pdf/Thompson-Report.pdf)
 of the Baltimore Housing Mobility Program, the remedy in *Thompson v. HUD*, and
 the basis of large parts of the Baltimore

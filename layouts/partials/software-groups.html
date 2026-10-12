@@ -13,7 +13,10 @@
       <div class="tile">
         <div class="tile-head">
           <a href="{{ .RelPermalink }}"><code>{{ .Title }}</code></a>
-          {{ with .Params.role }}<span class="chip">{{ . }}</span>{{ end }}
+          <span class="chip-set">
+            {{ with .Params.status }}<span class="chip status">{{ . }}</span>{{ end }}
+            {{ with .Params.role }}<span class="chip">{{ . }}</span>{{ end }}
+          </span>
         </div>
         {{ with .Params.summary }}<p class="summary">{{ . }}</p>{{ end }}
         <div class="tile-foot">

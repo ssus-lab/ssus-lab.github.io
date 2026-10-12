@@ -3,7 +3,8 @@ title: "netweave"
 code: true
 org: oturns
 weight: 3
-role: "Experimental"
+role: "Lead"
+status: "Experimental"
 repo: "https://github.com/oturns/netweave"
 summary: "Transit and pedestrian networks woven into one routable multimodal graph for accessibility analysis."
 ---

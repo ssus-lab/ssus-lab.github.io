@@ -19,7 +19,10 @@
       <div>
         {{ partial "icon.html" .icon }}
         <h3>{{ .name }}</h3>
-        <ul class="chips">{{ range .topics }}<li>{{ . }}</li>{{ end }}</ul>
+        <p class="chips-label">Fields</p>
+        <ul class="chips">{{ range .fields }}<li>{{ . }}</li>{{ end }}</ul>
+        <p class="chips-label">Methods</p>
+        <ul class="chips methods">{{ range .methods }}<li>{{ . }}</li>{{ end }}</ul>
       </div>
       {{ end }}
     </div>
@@ -44,7 +47,7 @@
   {{ with site.GetPage "/projects" }}
   <section class="section">
     <div class="section-head"><h2>{{ .Title }}</h2><a href="{{ .RelPermalink }}">All projects</a></div>
-    {{ partial "cards.html" .Pages.ByWeight }}
+    {{ partial "cards.html" (first 6 .Pages.ByWeight) }}
   </section>
   {{ end }}
 

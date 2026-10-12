@@ -4,7 +4,8 @@ code: true
 pypi: true
 org: ssus
 weight: 4
-role: "Pre-release"
+role: "Lead"
+status: "Pre-release"
 repo: "https://github.com/knaaptime/neighbayes"
 summary: "Bayesian estimation of spatial econometric models in Python."
 ---

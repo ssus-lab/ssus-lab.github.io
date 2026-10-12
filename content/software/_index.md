@@ -1,6 +1,6 @@
 ---
 title: "Software"
-lede: "SSUS is the institutional home of oturns, open tools for urban, regional, and neighborhood science. The lab also builds its own numerical and statistical tools and leads several packages in the PySAL federation."
+lede: "The lab's methods ship as open-source Python packages, so that anyone can check an analysis or carry it to another place."
 groups:
   - key: ssus
     name: "SSUS"
@@ -9,9 +9,9 @@ groups:
   - key: oturns
     name: "oturns"
     url: "https://github.com/oturns"
-    blurb: "Open tools for urban, regional, and neighborhood science."
+    blurb: "Open tools for urban, regional, and neighborhood science, housed at SSUS."
   - key: pysal
     name: "PySAL"
     url: "https://pysal.org"
-    blurb: "The Python Spatial Analysis Library. The lab leads the packages below; Eli is a core developer and serves on the steering committee."
+    blurb: "The Python Spatial Analysis Library. The lab leads the packages below; Knaap is a core developer and a member of the steering committee."
 ---

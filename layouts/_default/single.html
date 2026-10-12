@@ -3,7 +3,7 @@
   <header class="page-head">
     <h1>{{ if .Params.code }}<code>{{ .Title }}</code>{{ else }}{{ .Title }}{{ end }}</h1>
     {{ $meta := slice }}
-    {{ range slice .Params.years .Params.funder .Params.role }}{{ with . }}{{ $meta = $meta | append . }}{{ end }}{{ end }}
+    {{ range slice .Params.years .Params.funder .Params.venue .Params.role .Params.status }}{{ with . }}{{ $meta = $meta | append . }}{{ end }}{{ end }}
     {{ with $meta }}<p class="meta">{{ delimit . " · " }}</p>{{ end }}
   </header>
   {{ with .Params.image }}

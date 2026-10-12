@@ -9,10 +9,25 @@ book:
   url: "https://knaaptime.com/urban_analysis"
   note: "Draft online"
 
+forthcoming:
+  - title: "A Bayesian Lagrange-Multiplier Framework for Spatial Cross-Section, Panel, and Flow Models"
+    authors: "Elijah Knaap"
+    venue: "Spatial Economic Analysis"
+    page: "projects/lmbayes/"
+
 working:
+  - title: "Spatial Concordance Indices of Income Segregation"
+    authors: "Elijah Knaap and Sergio J. Rey"
+    note: "A new spatial segregation index that locates where in a region's income distribution its geography is most organized."
+    page: "projects/kindex/"
   - title: "Separated, Polarized, and Factioned?"
-    authors: "Elijah Knaap and Sergio Rey"
-    note: "Income segregation in the United States, measured at every spatial scale the data admit."
+    authors: "Elijah Knaap and Sergio J. Rey"
+    note: "The empirical sequel: income segregation across every U.S. metropolitan region from 2010 to 2025."
+    page: "projects/kindex/"
+  - title: "Fast and Unbiased Log-Determinants for Large Spatial Autoregressive Models"
+    authors: "Elijah Knaap"
+    note: "Unbiased log-determinants that bring Bayesian spatial autoregressive models to every U.S. census tract."
+    page: "projects/logdet/"
 
 articles:
   - title: "segregation: Segregation Analysis, Inference, and Decomposition in Python"
@@ -33,13 +48,13 @@ articles:
     year: 2025
     doi: "10.1016/j.drugpo.2025.104807"
   - title: "Segregated by design? Street network topological structure and the measurement of urban segregation"
-    authors: "Elijah Knaap and Sergio Rey"
+    authors: "Elijah Knaap and Sergio J. Rey"
     venue: "Environment and Planning B: Urban Analytics and City Science"
     year: 2024
     doi: "10.1177/23998083231197956"
     home: true
   - title: "Measuring two decades of urban spatial structure: The evolution of agglomeration economies in American metros"
-    authors: "Elijah Knaap and Sergio Rey"
+    authors: "Elijah Knaap and Sergio J. Rey"
     venue: "Computers, Environment and Urban Systems"
     year: 2024
     doi: "10.1016/j.compenvurbsys.2024.102116"

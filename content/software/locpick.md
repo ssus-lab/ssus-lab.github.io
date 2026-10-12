@@ -4,7 +4,8 @@ code: true
 pypi: true
 org: ssus
 weight: 5
-role: "Pre-release"
+role: "Lead"
+status: "Pre-release"
 repo: "https://github.com/knaaptime/locpick"
 summary: "Discrete choice models of location decisions: households, individuals, or firms choosing among places."
 ---
