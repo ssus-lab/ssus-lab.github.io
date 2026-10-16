@@ -2,6 +2,7 @@ baseURL = "/"
 relativeURLs = true
 title = "Spatial Science and Urban Systems"
 disableKinds = ["taxonomy", "term"]
+enableRobotsTXT = true
 
 # Only News carries a feed (content/news/_index.md asks for one); the other
 # sections' pages are undated, so their feeds would date every item year 1.
@@ -14,6 +15,20 @@ disableKinds = ["taxonomy", "term"]
   [caches.getresource]
     dir = ":cacheDir/:project"
     maxAge = "6h"
+
+# static/img is also mounted under assets/, so a page's figure can be resized
+# into its link preview; declaring a mount replaces the defaults, so both
+# defaults are restated.
+[module]
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    source = "static/img"
+    target = "assets/img"
 
 [params]
   university = "UC Irvine"

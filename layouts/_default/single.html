@@ -17,6 +17,7 @@
     {{ with .Params.links }}
     <div class="links">{{ range . }}<a href="{{ .url }}">{{ .label }}</a>{{ end }}</div>
     {{ end }}
+    {{ if eq .Section "software" }}{{ partial "software-links.html" . }}{{ end }}
   </article>
   {{ partial "related.html" . }}
 </div>

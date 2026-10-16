@@ -32,8 +32,10 @@ items:
     approx: true
     title: "PySAL workshop and zoning research at WRSA, Santa Fe"
     text: "Knaap and Rey taught a full-day PySAL workshop at the Western Regional Science Association's 65th annual meeting, February 11–14, and Knaap presented *Zoning and Segregation in Principal Cities and Suburbs*."
+    url: "https://github.com/knaaptime/workshop-pysal-wrsa26"
 
   - date: 2025-11-01
     approx: true
     title: "PySAL workshop and zoning research at NARSC, Denver"
     text: "Knaap taught *Spatial Data Analysis and Econometrics with PySAL* and presented *Zoning and Segregation: The Roles of Spatial Scale and Metropolitan Fragmentation*."
+    url: "https://github.com/knaaptime/workshop-pysal-narsc25"

@@ -6,6 +6,8 @@ org: ssus
 weight: 3
 role: "Lead"
 repo: "https://github.com/knaaptime/bayesplain"
+docs: "https://knaaptime.com/bayesplain/dev/"
+cite: "10.5281/zenodo.22801019"
 summary: "The Bayesian version of the tests an introductory statistics course teaches, printed beside the conventional test."
 ---
 

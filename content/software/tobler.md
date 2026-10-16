@@ -6,6 +6,8 @@ org: pysal
 weight: 2
 role: "Lead"
 repo: "https://github.com/pysal/tobler"
+docs: "https://pysal.org/tobler/"
+cite: "10.5281/zenodo.3386576"
 summary: "Areal interpolation, dasymetric mapping, change of support, and small area estimation."
 ---
 

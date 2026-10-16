@@ -6,6 +6,8 @@ org: pysal
 weight: 1
 role: "Lead"
 repo: "https://github.com/pysal/segregation"
+docs: "https://pysal.org/segregation/"
+cite: "10.21105/joss.11126"
 summary: "Segregation measurement: single-group, multigroup, and local indices, spatial and aspatial, with inference and decomposition."
 ---
 

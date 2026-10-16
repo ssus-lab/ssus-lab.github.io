@@ -6,6 +6,8 @@ org: oturns
 weight: 1
 role: "Lead"
 repo: "https://github.com/oturns/geosnap"
+docs: "https://oturns.github.io/geosnap-guide/"
+cite: "10.5281/zenodo.3526163"
 summary: "The Geospatial Neighborhood Analysis Package: exploring, modeling, and visualizing the social context and spatial extent of neighborhoods and regions over time."
 ---
 

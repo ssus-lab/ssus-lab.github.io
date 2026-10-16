@@ -7,6 +7,7 @@ weight: 4
 role: "Lead"
 status: "Pre-release"
 repo: "https://github.com/knaaptime/neighbayes"
+docs: "https://knaaptime.com/neighbayes/dev/"
 summary: "Bayesian estimation of spatial econometric models in Python."
 ---
 

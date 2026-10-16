@@ -1,0 +1,7 @@
+{{/* A package's outward links: documentation, PyPI, source, and the DOI to cite. Pass the software page. */}}
+{{ $links := slice }}
+{{ with .Params.docs }}{{ $links = $links | append (dict "label" "Documentation" "url" .) }}{{ end }}
+{{ if .Params.pypi }}{{ $links = $links | append (dict "label" "PyPI" "url" (printf "https://pypi.org/project/%s/" .Title)) }}{{ end }}
+{{ with .Params.repo }}{{ $links = $links | append (dict "label" "Source" "url" .) }}{{ end }}
+{{ with .Params.cite }}{{ $links = $links | append (dict "label" (printf "Cite: doi:%s" .) "url" (printf "https://doi.org/%s" .)) }}{{ end }}
+{{ with $links }}<div class="links">{{ range . }}<a href="{{ .url }}">{{ .label }}</a>{{ end }}</div>{{ end }}

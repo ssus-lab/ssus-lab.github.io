@@ -1,0 +1,26 @@
+# Workshop materials in public repositories, newest first. Titles and years
+# follow the CV's workshops section; add a workshop here when its repo is public.
+- title: "Spatial Data Analysis and Econometrics with PySAL"
+  venue: "Western Regional Science Association"
+  year: 2026
+  url: "https://github.com/knaaptime/workshop-pysal-wrsa26"
+- title: "Spatial Data Analysis and Econometrics with PySAL"
+  venue: "North American Regional Science Council"
+  year: 2025
+  url: "https://github.com/knaaptime/workshop-pysal-narsc25"
+- title: "Spatial: Networks, Interaction, & Econometrics for Migration"
+  venue: "NERSA/NARSC Summer Program"
+  year: 2025
+  url: "https://knaaptime.com/workshop-nersa25"
+- title: "Spatial Data Analysis and Econometrics with PySAL"
+  venue: "North American Regional Science Council"
+  year: 2024
+  url: "https://github.com/knaaptime/workshop-pysal-narsc24"
+- title: "Spatial Data Analysis and Econometrics with PySAL"
+  venue: "Western Regional Science Association"
+  year: 2024
+  url: "https://github.com/knaaptime/workshop-pysal-wrsa24"
+- title: "Spatial Data Analysis and Econometrics with PySAL"
+  venue: "North American Regional Science Council"
+  year: 2023
+  url: "https://github.com/knaaptime/workshop-pysal-narsc23"

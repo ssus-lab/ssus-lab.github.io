@@ -6,6 +6,8 @@ org: oturns
 weight: 2
 role: "Lead"
 repo: "https://github.com/oturns/pandarm"
+docs: "https://oturns.github.io/pandarm/"
+cite: "10.5281/zenodo.18728076"
 summary: "The pandas routing machine: travel network analysis on contraction hierarchies, with a pandas interface."
 ---
 

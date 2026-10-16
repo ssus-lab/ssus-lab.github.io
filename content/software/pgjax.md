@@ -6,6 +6,7 @@ org: ssus
 weight: 2
 role: "Lead"
 repo: "https://github.com/knaaptime/pgjax"
+docs: "https://knaaptime.com/pgjax/"
 summary: "Pólya-Gamma sampling on device for JAX, inside compiled, scanned, and parallel programs."
 ---
 

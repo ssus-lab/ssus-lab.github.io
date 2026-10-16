@@ -6,7 +6,7 @@
     {{ with (where $.Pages "Params.status" $status).ByWeight }}
     <section class="section">
       <div class="section-head"><h2>{{ $status }}</h2></div>
-      {{ partial "cards.html" . }}
+      {{ partial "cards.html" (dict "pages" . "hideStatus" true) }}
     </section>
     {{ end }}
   {{ end }}

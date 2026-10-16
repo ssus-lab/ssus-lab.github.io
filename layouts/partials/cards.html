@@ -1,13 +1,14 @@
-{{/* Projects as image cards. Pages without an image get the lattice figure as a placeholder. */}}
+{{/* Projects as image cards. Pass a dict: pages, and hideStatus where a section heading already names the status. Pages without an image get the lattice figure as a placeholder. */}}
+{{ $hide := .hideStatus | default false }}
 <div class="cards">
-  {{ range . }}
+  {{ range .pages }}
   {{ $p := . }}
   <a class="card" href="{{ .RelPermalink }}">
     <div class="plate{{ if in (slice "contain" "figure") .Params.fit }} contain{{ end }}">
       {{ with .Params.image }}<img src="{{ . | relURL }}" alt="{{ $p.Params.alt }}" loading="lazy">{{ else }}{{ partial "orders.html" . }}{{ end }}
     </div>
     <div class="card-body">
-      {{ $eyebrow := slice }}{{ range slice .Params.years .Params.status }}{{ with . }}{{ $eyebrow = $eyebrow | append . }}{{ end }}{{ end }}
+      {{ $eyebrow := slice }}{{ range slice .Params.years (cond $hide "" .Params.status) }}{{ with . }}{{ $eyebrow = $eyebrow | append . }}{{ end }}{{ end }}
       {{ with $eyebrow }}<p class="eyebrow">{{ delimit . " · " }}</p>{{ end }}
       <h3>{{ .Title }}</h3>
       {{ with .Params.summary }}<p class="summary">{{ . }}</p>{{ end }}

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>
     /* Apply a saved theme before first paint; with none saved, CSS follows the system. */
+    document.documentElement.classList.add("js");
     try { var t = localStorage.getItem("ssus-theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
   </script>
   <title>{{ if .IsHome }}{{ site.Title }} · {{ site.Params.university }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
@@ -16,9 +17,15 @@
   <meta property="og:title" content="{{ $title }}">
   <meta property="og:description" content="{{ $desc }}">
   <meta property="og:url" content="{{ .Permalink }}">
-  <meta property="og:image" content="{{ "img/ssus-avatar-512.png" | absURL }}">
-  <meta property="og:image:alt" content="The SSUS mark: a lattice of central places">
-  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="{{ .Permalink }}">
+  {{/* A page's own raster figure is its preview, resized to 1200 px; otherwise the lab avatar. SVG figures fall back, since previews need a raster. */}}
+  {{ $og := dict "src" ("img/ssus-avatar-512.png" | absURL) "alt" "The SSUS mark: a lattice of central places" "card" "summary" }}
+  {{ with .Params.image }}{{ if not (strings.HasSuffix . ".svg") }}{{ with resources.Get . }}
+    {{ $og = dict "src" (.Resize "1200x jpg q85 #ffffff").Permalink "alt" ($.Params.alt | default $.Title) "card" "summary_large_image" }}
+  {{ end }}{{ end }}{{ end }}
+  <meta property="og:image" content="{{ $og.src }}">
+  <meta property="og:image:alt" content="{{ $og.alt }}">
+  <meta name="twitter:card" content="{{ $og.card }}">
   {{ with site.Params.googleAnalyticsID }}
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
   <script>
@@ -30,13 +37,16 @@
   {{ end }}
   {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+  <link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="32x32">
   <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
   {{ with site.GetPage "/news" }}{{ with .OutputFormats.Get "rss" }}<link rel="alternate" type="application/rss+xml" title="News · {{ site.Title }}" href="{{ .Permalink }}">{{ end }}{{ end }}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header">
   <div class="wrap bar">
@@ -44,20 +54,23 @@
       <img class="when-light" src="{{ "img/ssus-horizontal-light.svg" | relURL }}" alt="Spatial Science and Urban Systems, UC Irvine">
       <img class="when-dark" src="{{ "img/ssus-horizontal-night.svg" | relURL }}" alt="Spatial Science and Urban Systems, UC Irvine">
     </a>
-    <nav class="site-nav" aria-label="Main">
+    <nav class="site-nav" id="site-nav" aria-label="Main">
       {{ $current := . }}
       {{ range site.Menus.main }}
         <a href="{{ .URL }}"{{ if $current.IsMenuCurrent "main" . }} aria-current="page"{{ end }}>{{ .Name }}</a>
       {{ end }}
+    </nav>
+    <div class="bar-tools">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
       <button class="theme-toggle" type="button" aria-label="Switch color theme">
         <svg class="when-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
         <svg class="when-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
       </button>
-    </nav>
+    </div>
   </div>
 </header>
 
-<main>
+<main id="main">
 {{ block "main" . }}{{ end }}
 </main>
 
@@ -94,6 +107,12 @@
     });
     if (mq.addEventListener) mq.addEventListener("change", label);
     label();
+  })();
+  (function () {
+    var bar = document.querySelector(".site-header .bar"), btn = document.querySelector(".menu-toggle");
+    function set(open) { bar.classList.toggle("open", open); btn.setAttribute("aria-expanded", open ? "true" : "false"); }
+    btn.addEventListener("click", function () { set(!bar.classList.contains("open")); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && bar.classList.contains("open")) { set(false); btn.focus(); } });
   })();
 </script>
 </body>

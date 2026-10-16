@@ -21,6 +21,13 @@ figure:
   text: "A multiscalar profile recomputes segregation as the neighborhood around each location widens. Here, nine U.S. metropolitan areas from 1980 to 2010: the curves fall with distance, and the shape of the fall differs from one metro to the next."
   link: "software/segregation/"
   linktext: "The segregation package computes these profiles"
+book:
+  title: "Urban Analysis & Spatial Science"
+  subtitle: "Theory, Methods, & Code for Studying Neighborhoods, Cities, & Regions"
+  text: "Knaap's textbook introduces the theory and intermediate quantitative methods of urban and regional analysis as a series of executable computational notebooks in Python. Each chapter takes a topic from the social science and policy literature and carries out a real analysis step by step."
+  venue: "CRC Press, forthcoming 2027 · draft online, CC BY-NC-ND"
+  url: "https://knaaptime.com/urban_analysis"
+  parts: ["Spatial Data", "Interpolation and Change of Support", "Spatial Analysis", "Accessibility and Interaction", "Urban Spatial Structure", "Segregation", "Urban Factor Models", "Neighborhood Delineation", "Neighborhood Change", "Spatial Econometrics", "Location Models"]
 ---
 
 SSUS is the research lab of [Elijah Knaap](people/eli-knaap/) at the

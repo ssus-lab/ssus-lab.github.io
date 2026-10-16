@@ -1,0 +1,59 @@
+<!doctype html>
+{{/*
+  Standalone, not built on baseof: GitHub Pages serves this file at whatever
+  missing path was asked for, so every URL here is absolute (relativeURLs
+  rewrites only root-relative ones) or the page would lose its styles below
+  the top level.
+*/}}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Page not found · {{ site.Title }}</title>
+  {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.Permalink }}">
+  <link rel="icon" href="{{ "favicon.ico" | absURL }}" sizes="32x32">
+  <link rel="icon" href="{{ "favicon.svg" | absURL }}" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="lockup" href="{{ "/" | absURL }}" aria-label="Spatial Science and Urban Systems, home">
+      <img class="when-light" src="{{ "img/ssus-horizontal-light.svg" | absURL }}" alt="Spatial Science and Urban Systems, UC Irvine">
+      <img class="when-dark" src="{{ "img/ssus-horizontal-night.svg" | absURL }}" alt="Spatial Science and Urban Systems, UC Irvine">
+    </a>
+  </div>
+</header>
+<main id="main">
+  <div class="wrap">
+    <header class="page-head">
+      <p class="eyebrow">404</p>
+      <h1>This page is not here</h1>
+      <p class="lede measure">The address may be mistyped, or the page may have moved. Everything on the site is reachable from these:</p>
+    </header>
+    <ul class="rows lost">
+      <li><span class="title"><a href="{{ "/" | absURL }}">Home</a></span></li>
+      {{ range site.Menus.main }}<li><span class="title"><a href="{{ strings.TrimPrefix "/" .URL | absURL }}">{{ .Name }}</a></span></li>{{ end }}
+    </ul>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="inner">
+      <div>
+        <img src="{{ "img/ssus-horizontal-dark.svg" | absURL }}" alt="Spatial Science and Urban Systems, UC Irvine">
+        <p class="tagline">{{ site.Params.tagline }}</p>
+      </div>
+    </div>
+    <div class="colophon">
+      <span>{{ site.Params.department }}, University of California, Irvine</span>
+      <span>© {{ now.Year }} SSUS</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

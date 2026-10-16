@@ -6,6 +6,7 @@ org: ssus
 weight: 1
 role: "Lead"
 repo: "https://github.com/knaaptime/sparsax"
+docs: "https://knaaptime.com/sparsax/"
 summary: "Sparse direct solvers for JAX, backed by SuiteSparse: factorizations, solves, and log-determinants that run natively inside compiled code."
 ---
 

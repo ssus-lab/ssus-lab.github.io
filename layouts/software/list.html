@@ -5,5 +5,19 @@
     {{ with .Params.lede }}<p class="lede measure">{{ . }}</p>{{ end }}
   </header>
   {{ partial "software-groups.html" . }}
+  {{ with hugo.Data.workshops }}
+  <section class="section">
+    <div class="section-head"><h2>Workshop materials</h2></div>
+    <ul class="rows">
+      {{ range . }}
+      <li>
+        <span class="title"><a href="{{ .url }}">{{ .title }}</a></span>
+        <span class="meta">{{ .year }}</span>
+        <p class="summary">{{ .venue }}</p>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
 </div>
 {{ end }}
