@@ -46,14 +46,20 @@
 {{ with .Params.book }}
 <section class="bookband" aria-labelledby="book-head">
   <div class="wrap">
-    <div class="book-grid">
-      <div>
-        <p class="eyebrow">The book</p>
-        <h2 id="book-head">{{ .title }}</h2>
-        <p class="book-sub">{{ .subtitle }}</p>
-        <p>{{ .text }}</p>
-        <p class="book-meta">{{ .venue }}</p>
-        <a href="{{ .url }}">Read the draft <span aria-hidden="true">→</span></a>
+    <div class="book">
+      <div class="book-grid">
+        <div>
+          <p class="eyebrow">The book</p>
+          <h2 id="book-head">{{ .title }}</h2>
+          <p class="book-sub">{{ .subtitle }}</p>
+          <p>{{ .text }}</p>
+          <p class="book-meta">{{ .venue }}</p>
+          <a href="{{ .url }}">Read the draft <span aria-hidden="true">→</span></a>
+        </div>
+        <figure class="book-fig">
+          {{ partial "bidrent-svg.html" . }}
+          <figcaption>{{ .figcaption }}</figcaption>
+        </figure>
       </div>
       <ol class="book-parts" aria-label="Parts of the book">{{ range .parts }}<li>{{ . }}</li>{{ end }}</ol>
     </div>

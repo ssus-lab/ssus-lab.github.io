@@ -27,6 +27,7 @@ book:
   text: "Knaap's textbook introduces the theory and intermediate quantitative methods of urban and regional analysis as a series of executable computational notebooks in Python. Each chapter takes a topic from the social science and policy literature and carries out a real analysis step by step."
   venue: "CRC Press, forthcoming 2027 · draft online, CC BY-NC-ND"
   url: "https://knaaptime.com/urban_analysis"
+  figcaption: "Bid rent, from the book's part on urban spatial structure: each land use outbids the others over one band of distance from the market center, so land rent follows the upper envelope of the three bids."
   parts: ["Spatial Data", "Interpolation and Change of Support", "Spatial Analysis", "Accessibility and Interaction", "Urban Spatial Structure", "Segregation", "Urban Factor Models", "Neighborhood Delineation", "Neighborhood Change", "Spatial Econometrics", "Location Models"]
 ---
 

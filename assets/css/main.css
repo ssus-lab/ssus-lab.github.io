@@ -260,15 +260,38 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* the book */
 .bookband { padding: 64px 0 0; }
-.book-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 36px 0 40px; }
+.book { border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 36px 0 32px; }
+.book-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 48px; align-items: center; }
+.book-fig { margin: 0; }
+.book-fig figcaption { margin-top: 10px; font-size: 13px; line-height: 1.45; color: var(--muted); }
 .bookband h2 { font-size: clamp(24px, 2.6vw, 30px); line-height: 1.2; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 6px; }
 .bookband p { color: var(--ink-2); }
 .bookband .book-sub { font-size: 17px; font-weight: 600; color: var(--ink); margin: 0 0 16px; }
 .bookband .book-meta { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: .06em; color: var(--muted); }
 .bookband a { font-weight: 600; }
-.book-parts { list-style: none; counter-reset: part; margin: 0; padding: 0; columns: 2; column-gap: 28px; align-self: center; }
+.book-parts { list-style: none; counter-reset: part; margin: 32px 0 0; padding: 0; columns: 4; column-gap: 28px; }
 .book-parts li { counter-increment: part; break-inside: avoid; display: flex; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--rule); font-size: 15px; line-height: 1.35; }
 .book-parts li::before { content: counter(part, decimal-leading-zero); font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 12px; color: var(--accent); padding-top: 2px; }
+
+/* bid-rent diagram (layouts/partials/bidrent-svg.html): series slots 1-3 */
+.bidrent { display: block; width: 100%; height: auto; --br-x: #0467A8; --br-y: #E0691E; --br-z: #14938D; --br-tint: .13; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .bidrent { --br-x: #2A76C3; --br-y: #DE6E2C; --br-z: #29A895; --br-tint: .22; } }
+:root[data-theme="dark"] .bidrent { --br-x: #2A76C3; --br-y: #DE6E2C; --br-z: #29A895; --br-tint: .22; }
+.bidrent .br-fill-x { fill: var(--br-x); fill-opacity: var(--br-tint); }
+.bidrent .br-fill-y { fill: var(--br-y); fill-opacity: var(--br-tint); }
+.bidrent .br-fill-z { fill: var(--br-z); fill-opacity: var(--br-tint); }
+.bidrent polyline { fill: none; stroke-linejoin: round; stroke-linecap: round; }
+.bidrent .br-bids polyline { stroke-width: 1.25; stroke-dasharray: 3 4; opacity: .6; }
+.bidrent .br-env polyline { stroke-width: 2.75; }
+.bidrent .br-x { stroke: var(--br-x); } .bidrent .br-y { stroke: var(--br-y); } .bidrent .br-z { stroke: var(--br-z); }
+.bidrent .br-guides line { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 2 3; }
+.bidrent .br-axes line { stroke: var(--ink); stroke-width: 1.5; }
+.bidrent .br-arrows line, .bidrent .br-arrows polyline { stroke: var(--muted); stroke-width: 1; fill: none; }
+.bidrent text { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; }
+.bidrent .br-axis-label { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; fill: var(--muted); }
+.bidrent .br-tick { font-size: 13px; fill: var(--ink-2); }
+.bidrent .br-name { font-family: "Libre Franklin", "Helvetica Neue", Arial, sans-serif; font-size: 13px; font-weight: 600; }
+.bidrent .br-name-x { fill: var(--br-x); } .bidrent .br-name-y { fill: var(--br-y); } .bidrent .br-name-z { fill: var(--br-z); }
 
 /* news: dated rows */
 .news { list-style: none; margin: 8px 0 0; padding: 0; }
@@ -309,6 +332,7 @@ a:hover { text-decoration-thickness: 2px; }
 .colophon { margin-top: 28px; padding-top: 16px; border-top: 1px solid rgba(248, 249, 247, .14); font-size: 12px; color: #8FA1AB; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 
 @media (max-width: 980px) {
+  .book-parts { columns: 2; }
   .cards, .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
@@ -325,6 +349,9 @@ a:hover { text-decoration-thickness: 2px; }
   .news li { grid-template-columns: 1fr; }
   .book-grid { grid-template-columns: 1fr; gap: 28px; }
   .book-parts { columns: 1; }
+  .bidrent .br-name { font-size: 18px; }
+  .bidrent .br-tick { font-size: 17px; }
+  .bidrent .br-axis-label { font-size: 14px; }
   .js .menu-toggle { display: inline-flex; }
   .bar-tools { margin-left: auto; }
   .js .site-nav { display: none; order: 3; flex-basis: 100%; flex-direction: column; align-items: stretch; gap: 0; margin: 0; }
