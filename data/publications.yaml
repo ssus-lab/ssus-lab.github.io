@@ -1,6 +1,9 @@
 # Selected publications, newest first. Titles, authors, and DOIs checked against
 # Crossref; years are the journal issue years. `home: true` puts an entry on
-# the home page.
+# the home page (the first four flagged show). `date` (YYYY-MM-DD: publication
+# for articles, acceptance for forthcoming) adds the entry to News. `page` names
+# the project or software page it belongs to, which then lists it.
+# A working paper's `url` (a preprint) links it there.
 
 book:
   title: "Urban Analysis and Spatial Science: Theory, Methods, & Code for Studying Neighborhoods, Cities, & Regions"
@@ -13,6 +16,7 @@ forthcoming:
   - title: "A Bayesian Lagrange-Multiplier Framework for Spatial Cross-Section, Panel, and Flow Models"
     authors: "Elijah Knaap"
     venue: "Spatial Economic Analysis"
+    date: 2026-09-18
     page: "projects/lmbayes/"
 
 working:
@@ -35,18 +39,22 @@ articles:
     venue: "Journal of Open Source Software"
     year: 2026
     doi: "10.21105/joss.11126"
+    date: 2026-09-16
+    page: "software/segregation/"
     home: true
   - title: "Exploring Space-Time Interactions in Fatal Opioid Overdoses"
     authors: "Sergio J. Rey, Elijah Knaap, Alejandra Cabral, Jennifer Syvertsen"
     venue: "Geographical Analysis"
     year: 2025
     doi: "10.1111/gean.70019"
+    page: "projects/overdose/"
     home: true
   - title: "The emergence of fentanyl in a stimulant landscape: Un/intentional use, social relations, and developing communities of care"
     authors: "Jennifer Syvertsen, Alejandra Cabral, Elijah Knaap, Sergio Rey, Robin A. Pollini"
     venue: "International Journal of Drug Policy"
     year: 2025
     doi: "10.1016/j.drugpo.2025.104807"
+    page: "projects/overdose/"
   - title: "Segregated by design? Street network topological structure and the measurement of urban segregation"
     authors: "Elijah Knaap and Sergio J. Rey"
     venue: "Environment and Planning B: Urban Analytics and City Science"
@@ -80,9 +88,11 @@ articles:
     venue: "City & Community"
     year: 2018
     doi: "10.1111/cico.12318"
+    page: "projects/opportunity/"
   - title: "The Cartography of Opportunity: Spatial Data Science for Equitable Urban Policy"
     authors: "Elijah Knaap"
     venue: "Housing Policy Debate"
     year: 2017
     doi: "10.1080/10511482.2017.1331930"
+    page: "projects/opportunity/"
     home: true

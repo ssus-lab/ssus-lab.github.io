@@ -1,0 +1,4 @@
+{{/* A news link: external URLs as given, site paths ("projects/kindex/") made relative, nothing as "". */}}
+{{ $u := "" }}
+{{ with . }}{{ $u = cond (strings.Contains . "://") . (relURL .) }}{{ end }}
+{{ return $u }}

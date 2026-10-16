@@ -2,6 +2,7 @@
 title: "Fast and Unbiased Log-Determinants for Large Spatial Autoregressive Models"
 status: "Current"
 weight: 2
+software: ["neighbayes", "sparsax"]
 summary: "Log-determinant methods that make Bayesian spatial autoregressive models fast and unbiased at the scale of every U.S. census tract."
 image: "img/fig/logdet-bias-tracts.webp"
 alt: "Two line charts of bias in the posterior mean of rho against the true value of rho, negative values at left and positive at right. Six log-determinant methods lie on zero through the interior; near rho of 0.9 and above, the Barry–Pace line climbs to about 1.4 posterior standard deviations, and two others rise modestly."

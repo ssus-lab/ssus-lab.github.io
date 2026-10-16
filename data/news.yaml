@@ -1,0 +1,39 @@
+# Lab news that no other source records: talks, workshops, convenings, service.
+# Publications (a `date` in publications.yaml) and package releases (each
+# software page's GitHub repo) join the News page on their own; don't repeat
+# them here. Items dated after the build list under Upcoming until the date
+# passes; the daily scheduled build moves them.
+#
+#   date:   YYYY-MM-DD
+#   approx: true to show the month only, when the day is not the point
+#   title:  one line; text: a sentence or two (Markdown); url: a site path
+#           ("projects/kindex/") or a full URL
+items:
+  - date: 2026-11-11
+    title: "PySAL workshop and new segregation research at NARSC, Philadelphia"
+    text: "Knaap and Sergio Rey teach *Spatial Data Analysis and Econometrics with PySAL* on the first day of the North American Regional Science Council's annual meeting, November 11–14, and Knaap presents *Separated, Polarized, and Factioned?*"
+    url: "projects/kindex/"
+
+  - date: 2026-09-28
+    title: "Knaap joins the editorial board of Regional Science Policy & Practice"
+
+  - date: 2026-03-17
+    approx: true
+    title: "Panel at the AAG Annual Meeting: Open Source Spatial Data Science, Government & Industry"
+    text: "Co-organized and co-chaired by Knaap and Taylor Oshan at the American Association of Geographers' annual meeting in San Francisco, March 17–21, as part of the NSF POSE project."
+    url: "projects/pose/"
+
+  - date: 2026-03-15
+    title: "Spatial Data Science Summit at the Berkeley Institute for Data Science"
+    text: "Knaap co-organized the summit's two days of working sessions, March 15–16, as a co-PI of the NSF POSE project."
+    url: "https://events.berkeley.edu/BIDS/event/313748-spatial-data-science-summit"
+
+  - date: 2026-02-11
+    approx: true
+    title: "PySAL workshop and zoning research at WRSA, Santa Fe"
+    text: "Knaap and Rey taught a full-day PySAL workshop at the Western Regional Science Association's 65th annual meeting, February 11–14, and Knaap presented *Zoning and Segregation in Principal Cities and Suburbs*."
+
+  - date: 2025-11-01
+    approx: true
+    title: "PySAL workshop and zoning research at NARSC, Denver"
+    text: "Knaap taught *Spatial Data Analysis and Econometrics with PySAL* and presented *Zoning and Segregation: The Roles of Spatial Scale and Metropolitan Fragmentation*."

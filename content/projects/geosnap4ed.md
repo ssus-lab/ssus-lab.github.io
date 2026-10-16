@@ -5,6 +5,7 @@ years: "2020–2024"
 status: "Completed"
 role: "Co-PI (PI: Sergio Rey)"
 weight: 8
+software: ["geosnap"]
 summary: "Neighborhood analysis methods for education research, delivered through geosnap."
 image: "img/fig/la-school-lisa.webp"
 alt: "Map of schools in the Los Angeles area colored by local Moran cluster type: high-high, low-low, outliers, and not significant."

@@ -18,10 +18,4 @@ and emergency services. A model of where fatal overdoses occur, coupled to a
 facility-location model, shows where harm-reduction services would reach the
 most risk.
 
-Publications:
-[Exploring Space-Time Interactions in Fatal Opioid Overdoses](https://doi.org/10.1111/gean.70019)
-(*Geographical Analysis*, 2025);
-[The emergence of fentanyl in a stimulant landscape](https://doi.org/10.1016/j.drugpo.2025.104807)
-(*International Journal of Drug Policy*, 2025).
-
 [NIH RePORTER](https://reporter.nih.gov/search/-JleayzR9Ui2hX62w1B1uw/project-details/10302741)

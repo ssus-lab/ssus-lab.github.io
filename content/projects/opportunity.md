@@ -18,9 +18,3 @@ the basis of large parts of the Baltimore
 developed at the National Center for Smart Growth. The same approach later
 informed [Opportunity360](https://dashboards.mysidewalk.com/opportunity360-community-dashboard/welcome)
 at Enterprise Community Partners.
-
-Publications:
-[The Cartography of Opportunity](https://doi.org/10.1080/10511482.2017.1331930)
-(*Housing Policy Debate*, 2017);
-[Opportunity for Whom?](https://doi.org/10.1111/cico.12318)
-(*City & Community*, 2018).

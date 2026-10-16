@@ -44,31 +44,39 @@
 {{ end }}
 
 <div class="wrap">
+  {{ with site.GetPage "/news" }}
+  <section class="section">
+    <div class="section-head"><h2>{{ .Title }}</h2><a href="{{ .RelPermalink }}">All news</a></div>
+    {{/* The three newest items, at most one of them a package release. */}}
+    {{ $home := slice }}{{ $releases := 0 }}
+    {{ range partialCached "news-collect.html" site "news" }}
+      {{ if lt (len $home) 3 }}
+        {{ if ne .kind "Release" }}{{ $home = $home | append . }}
+        {{ else if lt $releases 1 }}{{ $home = $home | append . }}{{ $releases = add $releases 1 }}{{ end }}
+      {{ end }}
+    {{ end }}
+    {{ partial "news-list.html" $home }}
+  </section>
+  {{ end }}
+
   {{ with site.GetPage "/projects" }}
   <section class="section">
     <div class="section-head"><h2>{{ .Title }}</h2><a href="{{ .RelPermalink }}">All projects</a></div>
-    {{ partial "cards.html" (first 6 .Pages.ByWeight) }}
+    {{ partial "cards.html" (first 3 .Pages.ByWeight) }}
   </section>
   {{ end }}
 
   {{ with site.GetPage "/publications" }}
   <section class="section">
     <div class="section-head"><h2>Selected publications</h2><a href="{{ .RelPermalink }}">All publications</a></div>
-    {{ partial "pubs-home.html" (where hugo.Data.publications.articles "home" true) }}
+    {{ partial "pubs-home.html" (first 4 (where hugo.Data.publications.articles "home" true)) }}
   </section>
   {{ end }}
 
   {{ with site.GetPage "/software" }}
   <section class="section">
     <div class="section-head"><h2>{{ .Title }}</h2><a href="{{ .RelPermalink }}">All software</a></div>
-    {{ partial "software-groups.html" . }}
-  </section>
-  {{ end }}
-
-  {{ with site.GetPage "/people" }}
-  <section class="section">
-    <div class="section-head"><h2>{{ .Title }}</h2></div>
-    <div class="people">{{ range .Pages }}{{ partial "person.html" . }}{{ end }}</div>
+    {{ partial "software-strip.html" . }}
   </section>
   {{ end }}
 </div>

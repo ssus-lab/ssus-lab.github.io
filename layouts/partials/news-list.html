@@ -1,0 +1,13 @@
+{{/* News items as dated rows. Pass a list from news-collect.html. Items after the build date read "Upcoming". */}}
+<ol class="news">
+  {{ range . }}
+  <li>
+    <time datetime="{{ .key }}">{{ if .approx }}{{ .date.Format "Jan 2006" }}{{ else }}{{ .date.Format "Jan 2, 2006" }}{{ end }}</time>
+    <div>
+      <p class="kind">{{ if .date.After now }}Upcoming{{ else }}{{ .kind }}{{ end }}</p>
+      {{ if .url }}<a class="ntitle" href="{{ .url }}">{{ .title }}</a>{{ else }}<span class="ntitle">{{ .title }}</span>{{ end }}
+      {{ with .text }}<p class="ntext">{{ . | markdownify }}</p>{{ end }}
+    </div>
+  </li>
+  {{ end }}
+</ol>

@@ -31,6 +31,7 @@
   {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
   <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+  {{ with site.GetPage "/news" }}{{ with .OutputFormats.Get "rss" }}<link rel="alternate" type="application/rss+xml" title="News · {{ site.Title }}" href="{{ .Permalink }}">{{ end }}{{ end }}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">

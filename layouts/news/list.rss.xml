@@ -1,0 +1,21 @@
+{{- $items := partialCached "news-collect.html" site "news" -}}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>News · {{ site.Title }}</title>
+    <link>{{ .Permalink }}</link>
+    <description>News from {{ site.Title }}, {{ site.Params.university }}: publications, software releases, talks, and workshops.</description>
+    <language>en</language>
+    {{ with .OutputFormats.Get "rss" }}<atom:link href="{{ .Permalink }}" rel="self" type="application/rss+xml"/>{{ end }}
+    {{- range first 30 $items }}
+    {{- $link := cond (strings.Contains .url "://") .url (absURL (strings.TrimPrefix "/" .url)) }}
+    <item>
+      <title>{{ printf "%s: %s" .kind .title | transform.XMLEscape | safeHTML }}</title>
+      <link>{{ if .url }}{{ $link }}{{ else }}{{ $.Permalink }}{{ end }}</link>
+      <guid isPermaLink="false">{{ .key }}-{{ .title | urlize }}</guid>
+      <pubDate>{{ .date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
+      {{ with .text }}<description>{{ . | markdownify | plainify | htmlUnescape | transform.XMLEscape | safeHTML }}</description>{{ end }}
+    </item>
+    {{- end }}
+  </channel>
+</rss>

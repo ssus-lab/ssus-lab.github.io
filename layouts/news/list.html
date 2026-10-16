@@ -1,0 +1,18 @@
+{{ define "main" }}
+{{ $all := partialCached "news-collect.html" site "news" }}
+{{ $upcoming := slice }}{{ $past := slice }}
+{{ range $all }}{{ if .date.After now }}{{ $upcoming = $upcoming | append . }}{{ else }}{{ $past = $past | append . }}{{ end }}{{ end }}
+<div class="wrap">
+  <header class="page-head"><h1>{{ .Title }}</h1></header>
+  {{ with $upcoming }}
+  <section class="section">
+    <div class="section-head"><h2>Upcoming</h2></div>
+    {{ partial "news-list.html" (sort . "key" "asc") }}
+  </section>
+  {{ end }}
+  <section class="section">
+    <div class="section-head"><h2>Recent</h2><a href="{{ "news/index.xml" | relURL }}">RSS</a></div>
+    {{ partial "news-list.html" $past }}
+  </section>
+</div>
+{{ end }}

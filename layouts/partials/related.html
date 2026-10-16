@@ -1,0 +1,44 @@
+{{/*
+  Cross-links at the foot of a project or software page. Pass the page.
+    Publications: entries in data/publications.yaml whose `page` is this page.
+    Software:     a project's `software` list, by package name.
+    Used in:      on a software page, the projects whose `software` lists it.
+*/}}
+{{ $p := . }}
+{{ $here := strings.TrimPrefix "/" .RelPermalink }}
+{{ $d := hugo.Data.publications }}
+{{ $pubs := slice }}
+{{ range slice $d.forthcoming $d.articles $d.working }}
+  {{ range . }}{{ if eq .page $here }}{{ $pubs = $pubs | append . }}{{ end }}{{ end }}
+{{ end }}
+{{ $software := slice }}
+{{ range .Params.software }}{{ with site.GetPage (printf "/software/%s" .) }}{{ $software = $software | append . }}{{ end }}{{ end }}
+{{ $usedIn := slice }}
+{{ if eq .Section "software" }}
+  {{ $usedIn = (where (where site.RegularPages "Section" "projects") "Params.software" "intersect" (slice .Title)).ByWeight }}
+{{ end }}
+
+{{ if or $pubs $software $usedIn }}
+<aside class="related measure" aria-label="Related work">
+  {{ with $pubs }}
+  <h2>Publications</h2>
+  <ul class="rel-pubs">
+    {{ range . }}
+    <li>
+      {{ $href := "" }}{{ with .doi }}{{ $href = printf "https://doi.org/%s" . }}{{ else with .url }}{{ $href = . }}{{ end }}
+      {{ with $href }}<a href="{{ . }}">{{ end }}{{ .title }}{{ if $href }}</a>{{ end }}
+      <span class="rel-meta">{{ with .venue }}<em>{{ . }}</em>{{ else }}Working paper{{ end }}{{ with .year }}, {{ . }}{{ end }}{{ if and .venue (not .year) (not .doi) }}, forthcoming{{ end }}</span>
+    </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+  {{ with $software }}
+  <h2>Software</h2>
+  <p class="rel-code">{{ range . }}<a href="{{ .RelPermalink }}"><code>{{ .Title }}</code></a>{{ end }}</p>
+  {{ end }}
+  {{ with $usedIn }}
+  <h2>Used in</h2>
+  <ul class="rel-projects">{{ range . }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}</ul>
+  {{ end }}
+</aside>
+{{ end }}

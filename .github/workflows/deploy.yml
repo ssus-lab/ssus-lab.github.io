@@ -4,6 +4,9 @@ on:
   push:
     branches: ["main"]
   workflow_dispatch:
+  # Daily rebuild, so News picks up new package releases and past events leave Upcoming.
+  schedule:
+    - cron: "17 14 * * *"
 
 permissions:
   contents: read

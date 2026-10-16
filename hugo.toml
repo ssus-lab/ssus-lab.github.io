@@ -3,6 +3,18 @@ relativeURLs = true
 title = "Spatial Science and Urban Systems"
 disableKinds = ["taxonomy", "term"]
 
+# Only News carries a feed (content/news/_index.md asks for one); the other
+# sections' pages are undated, so their feeds would date every item year 1.
+[outputs]
+  home = ["html"]
+  section = ["html"]
+
+# News reads each package's releases.atom at build time; refetch after six hours.
+[caches]
+  [caches.getresource]
+    dir = ":cacheDir/:project"
+    maxAge = "6h"
+
 [params]
   university = "UC Irvine"
   tagline = "Open spatial science for public decisions."
@@ -25,6 +37,10 @@ disableKinds = ["taxonomy", "term"]
     name = "Software"
     pageRef = "/software"
     weight = 30
+  [[menus.main]]
+    name = "News"
+    pageRef = "/news"
+    weight = 35
   [[menus.main]]
     name = "People"
     pageRef = "/people"

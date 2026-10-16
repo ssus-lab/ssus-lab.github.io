@@ -1,0 +1,76 @@
+{{/*
+  News, gathered at build time from three sources and returned newest first:
+    1. data/news.yaml: events, talks, and other hand-written items;
+    2. data/publications.yaml: any article or forthcoming entry with a `date`;
+    3. each software page's `repo`: its latest GitHub release of the past year,
+       read from the repository's releases.atom feed.
+  Each item is a dict: key (sortable date string), date (time), approx, kind,
+  title, text, url. A feed that cannot be fetched is skipped with a warning,
+  so a network failure never breaks the build. Call with partialCached.
+*/}}
+{{ $items := slice }}
+
+{{ range hugo.Data.news.items }}
+  {{ $t := time.AsTime .date }}
+  {{ $items = $items | append (dict
+    "key" ($t.Format "2006-01-02") "date" $t "approx" (.approx | default false)
+    "kind" (.kind | default "News") "title" .title "text" (.text | default "")
+    "url" (partial "news-url.html" .url)) }}
+{{ end }}
+
+{{ $pubs := hugo.Data.publications }}
+{{ range $pubs.articles }}
+  {{ if .date }}
+    {{ $t := time.AsTime .date }}
+    {{ $url := "" }}{{ with .doi }}{{ $url = printf "https://doi.org/%s" . }}{{ end }}
+    {{ $items = $items | append (dict
+      "key" ($t.Format "2006-01-02") "date" $t "approx" false
+      "kind" "Published" "title" .title
+      "text" (printf "%s. %s." .authors .venue) "url" $url) }}
+  {{ end }}
+{{ end }}
+{{ range $pubs.forthcoming }}
+  {{ if .date }}
+    {{ $t := time.AsTime .date }}
+    {{ $items = $items | append (dict
+      "key" ($t.Format "2006-01-02") "date" $t "approx" false
+      "kind" "Accepted" "title" .title
+      "text" (printf "%s. Forthcoming in %s." .authors .venue)
+      "url" (partial "news-url.html" .page)) }}
+  {{ end }}
+{{ end }}
+
+{{ $cutoff := now.AddDate -1 0 0 }}
+{{ range where site.RegularPages "Section" "software" }}
+  {{ $pkg := . }}
+  {{ with .Params.repo }}
+    {{ $feedURL := printf "%s/releases.atom" (strings.TrimSuffix "/" .) }}
+    {{ with try (resources.GetRemote $feedURL) }}
+      {{ with .Err }}
+        {{ warnf "news: skipped %s: %s" $feedURL . }}
+      {{ else with .Value }}
+        {{ $feed := .Content | transform.Unmarshal }}
+        {{ $entries := $feed.entry }}
+        {{ if reflect.IsMap $entries }}{{ $entries = slice $entries }}{{ end }}
+        {{ $latest := false }}
+        {{ range $entries }}
+          {{ $tag := path.Base (index .link "-href") }}
+          {{ if and (not $latest) (not (in (slice "v0.0.0" "0.0.0") $tag)) }}
+            {{ $latest = dict "tag" $tag "date" (time.AsTime .updated) "url" (index .link "-href") }}
+          {{ end }}
+        {{ end }}
+        {{ with $latest }}
+          {{ if .date.After $cutoff }}
+            {{ $items = $items | append (dict
+              "key" (.date.Format "2006-01-02") "date" .date "approx" false
+              "kind" "Release"
+              "title" (printf "%s %s" $pkg.Title (strings.TrimPrefix "v" .tag))
+              "text" ($pkg.Params.summary | default "") "url" .url) }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ return sort $items "key" "desc" }}

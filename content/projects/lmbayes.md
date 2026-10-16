@@ -3,6 +3,7 @@ title: "A Bayesian Lagrange-Multiplier Framework for Spatial Cross-Section, Pane
 status: "Current"
 venue: "Spatial Economic Analysis, forthcoming"
 weight: 3
+software: ["neighbayes"]
 summary: "Bayesian counterparts of the Lagrange-multiplier tests that spatial econometrics uses to choose a specification."
 image: "img/fig/lmbayes-columbus-posteriors.webp"
 alt: "Eight histograms, one per Bayesian Lagrange-multiplier statistic on the Columbus crime data, each marked with the 5 percent chi-squared critical value as a dashed line and the posterior mean as a solid red line."

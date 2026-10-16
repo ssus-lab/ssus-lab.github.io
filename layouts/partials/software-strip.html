@@ -1,0 +1,13 @@
+{{/* Software as one line per group: the group's name, then its packages by name. Pass the software section page. */}}
+{{ $pages := .Pages }}
+<div class="strip">
+  {{ range .Params.groups }}
+  {{ $members := (where $pages "Params.org" .key).ByWeight }}
+  {{ if $members }}
+  <p class="strip-row">
+    <span class="strip-group">{{ .name }}</span>
+    {{ range $members }}<a href="{{ .RelPermalink }}"><code>{{ .Title }}</code></a>{{ end }}
+  </p>
+  {{ end }}
+  {{ end }}
+</div>
