@@ -1,6 +1,7 @@
 ---
 title: "Modeling the Geography of Opportunity for Fair Housing Policy"
 funder: "HUD"
+years: "2014–2016"
 status: "Completed"
 weight: 5
 summary: "Opportunity models behind HUD's evaluation of the Baltimore Housing Mobility Program and the Baltimore regional plan."
