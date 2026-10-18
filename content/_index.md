@@ -41,10 +41,11 @@ University of California, Irvine. We draw on urban economics, sociology, and
 geography to explain why activity concentrates where it does, how places
 change, and who gains or loses as they do.
 
-Outcomes in one place depend on its neighbors, so these questions need spatial
-models: we develop spatial econometric and Bayesian models of sorting and
-spillovers, and the sparse numerical tools that make them feasible for whole
-metropolitan regions.
+People and places are connected and interdependent. Understanding network
+structure and relationships embedded in space requires formal geographic
+models: we develop spatial econometric and Bayesian models of spillovers,
+sorting, and flows, and the sparse numerical tools that make them feasible for
+whole metropolitan regions.
 
 The questions come from policy. Our models have informed a federal fair-housing
 evaluation and a regional plan, and show where harm-reduction services would
