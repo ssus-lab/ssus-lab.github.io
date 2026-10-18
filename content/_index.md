@@ -4,7 +4,7 @@ statement: "We study the spatial organization of neighborhoods, cities, and regi
 # Three ways into the work, each with examples rather than a boundary; the
 # methods that serve all three sit in one row beneath them.
 areas:
-  - name: "Structure"
+  - name: "Structure and Form"
     icon: "structure"
     text: "How land, housing, and jobs are arranged across a region."
     examples: ["Land and housing markets", "Economic geography", "Agglomeration", "Urban form"]
@@ -46,8 +46,3 @@ structure and relationships embedded in space requires formal geographic
 models: we develop spatial econometric and Bayesian models of spillovers,
 sorting, and flows, and the sparse numerical tools that make them feasible for
 whole metropolitan regions.
-
-The questions come from policy. Our models have informed a federal fair-housing
-evaluation and a regional plan, and show where harm-reduction services would
-reach the most overdose risk. The methods behind them ship as open-source
-software, so others can check the analysis and apply it to their own decisions.
