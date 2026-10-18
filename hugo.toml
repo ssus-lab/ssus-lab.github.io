@@ -32,8 +32,8 @@ enableRobotsTXT = true
 
 [params]
   university = "UC Irvine"
-  tagline = "Open spatial science for public decisions."
-  statement = "We build open-source methods, models, and software for understanding sociospatial structure."
+  tagline = "Spatial methods for urban processes, open science for public decisions."
+  statement = "We study the spatial organization of neighborhoods, cities, and regions."
   department = "Department of Urban Planning and Public Policy"
   github = "https://github.com/ssus-lab"
   director = "Elijah Knaap"

@@ -1,19 +1,24 @@
 ---
 title: "Spatial Science and Urban Systems"
-statement: "We build open-source methods, models, and software for understanding sociospatial structure."
+statement: "We study the spatial organization of neighborhoods, cities, and regions."
+# Three ways into the work, each with examples rather than a boundary; the
+# methods that serve all three sit in one row beneath them.
 areas:
-  - name: "Urban spatial structure"
+  - name: "Structure"
+    icon: "structure"
+    text: "How land, housing, and jobs are arranged across a region."
+    examples: ["Land and housing markets", "Economic geography", "Agglomeration", "Urban form"]
+  - name: "Sorting and change"
     icon: "sorting"
-    fields: ["Urban economics", "Residential sorting", "Housing and land markets", "Neighborhood dynamics"]
-    methods: ["Discrete choice models", "Land value models", "Agglomeration measurement", "Geodemographic clustering"]
-  - name: "Spatial science"
-    icon: "methods"
-    fields: ["Spatial econometrics", "Spatial statistics", "Spatial data science", "Urban analytics", "Computational social science"]
-    methods: ["Spatial autoregressive models", "Bayesian estimation at scale", "Areal interpolation", "Regionalization", "Network accessibility"]
-  - name: "Inequality and policy"
+    text: "Who lives where, and how neighborhoods change."
+    examples: ["Residential sorting", "Segregation", "Neighborhood change", "Neighborhood effects"]
+  - name: "Access and policy"
     icon: "inequality"
-    fields: ["Segregation", "Neighborhood effects", "Access to opportunity", "Housing policy", "Public health"]
-    methods: ["Multiscalar segregation profiles", "Opportunity mapping", "Facility location models", "Space-time analysis"]
+    text: "Who can reach what, and how public decisions change it."
+    examples: ["Access to opportunity", "Schools", "Public health", "Transportation", "Fair housing"]
+methods:
+  label: "How we work"
+  items: ["Spatial econometrics", "Spatial statistics", "Bayesian estimation at scale", "Discrete choice models", "Measurement models", "Areal interpolation", "Regionalization", "Network accessibility", "Open-source software"]
 figure:
   image: "img/fig/multiscalar-profiles.webp"
   alt: "Nine small line charts, one per metropolitan area, each showing a segregation index falling as the distance defining the neighborhood grows, with one line per census year from 1980 to 2010."
@@ -32,10 +37,9 @@ book:
 ---
 
 SSUS is the research lab of [Elijah Knaap](people/eli-knaap/) at the
-University of California, Irvine. We study who lives where and why: how
-households sort across neighborhoods, how housing and land markets price
-location, and how the resulting patterns of segregation and opportunity change
-over time.
+University of California, Irvine. We draw on urban economics, sociology, and
+geography to explain why activity concentrates where it does, how places
+change, and who gains or loses as they do.
 
 Outcomes in one place depend on its neighbors, so these questions need spatial
 models: we develop spatial econometric and Bayesian models of sorting and

@@ -10,7 +10,7 @@
   </script>
   <title>{{ if .IsHome }}{{ site.Title }} · {{ site.Params.university }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
   {{ $title := cond .IsHome (printf "%s · %s" site.Title site.Params.university) .Title }}
-  {{ $desc := .Description | default .Params.summary | default .Params.lede | default (printf "%s %s" site.Params.tagline site.Params.statement) }}
+  {{ $desc := .Description | default .Params.summary | default .Params.lede | default (printf "%s %s" site.Params.statement site.Params.tagline) }}
   <meta name="description" content="{{ $desc }}">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="{{ site.Title }}">

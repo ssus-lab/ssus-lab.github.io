@@ -5,6 +5,7 @@
     <div>
       <p class="eyebrow">{{ site.Params.department }} · {{ site.Params.university }}</p>
       <h1>{{ .Params.statement }}</h1>
+      <p class="deck">{{ site.Params.tagline }}</p>
       <div class="body measure">{{ .Content }}</div>
     </div>
     {{ partial "orders.html" . }}
@@ -19,13 +20,20 @@
       <div>
         {{ partial "icon.html" .icon }}
         <h3>{{ .name }}</h3>
-        <p class="chips-label">Fields</p>
-        <ul class="chips">{{ range .fields }}<li>{{ . }}</li>{{ end }}</ul>
-        <p class="chips-label">Methods</p>
-        <ul class="chips methods">{{ range .methods }}<li>{{ . }}</li>{{ end }}</ul>
+        <p class="area-text">{{ .text }}</p>
+        <ul class="chips">{{ range .examples }}<li>{{ . }}</li>{{ end }}</ul>
       </div>
       {{ end }}
     </div>
+    {{ with .Params.methods }}
+    <div class="how">
+      {{ partial "icon.html" "methods" }}
+      <div>
+        <h3>{{ .label }}</h3>
+        <ul class="chips methods">{{ range .items }}<li>{{ . }}</li>{{ end }}</ul>
+      </div>
+    </div>
+    {{ end }}
   </div>
 </section>
 

@@ -1,10 +1,16 @@
 {{/*
   Research-area icons, drawn in the mark's idiom: nodes, ties, cells.
-  Pass the icon name: "sorting", "methods", or "inequality". Colored by currentColor.
+  Pass the icon name: "structure", "sorting", "methods", or "inequality". Colored by currentColor.
 */}}
 {{ $name := . }}
 <svg class="icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-{{ if eq $name "sorting" }}
+{{ if eq $name "structure" }}
+  {{/* Bid rent: three bids falling with distance, land going to the upper envelope. */}}
+  <path d="M7 6 V41 H42" opacity=".7"/>
+  <path d="M8 8 L26.3 41 M8 18 L36.8 41 M8 27 L42 37.2" stroke-dasharray="2 3.2" opacity=".55"/>
+  <path d="M8 8 L18 26 L26 32.4 L42 37.2" stroke-width="2.4"/>
+  <circle cx="18" cy="26" r="2.4" fill="currentColor"/><circle cx="26" cy="32.4" r="2.4" fill="currentColor"/>
+{{ else if eq $name "sorting" }}
   {{/* Two clusters that have sorted apart: one filled, one open. */}}
   <path d="M8 15 L17 10 M8 15 L14 25 M17 10 L14 25 M14 25 L7 33" opacity=".7"/>
   <path d="M33 16 L41 12 M33 16 L37 27 M41 12 L37 27 M37 27 L42 36" opacity=".7"/>
