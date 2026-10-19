@@ -20,12 +20,12 @@ methods:
   label: "How We Work"
   items: ["Spatial econometrics", "Spatial statistics", "Bayesian estimation at scale", "Discrete choice models", "Measurement models", "Areal interpolation", "Regionalization", "Network accessibility", "Open-source software"]
 figure:
-  image: "img/fig/multiscalar-profiles.webp"
-  alt: "Nine small line charts, one per metropolitan area, each showing a segregation index falling as the distance defining the neighborhood grows, with one line per census year from 1980 to 2010."
-  title: "Segregation depends on the scale you measure it at"
-  text: "A multiscalar profile recomputes segregation as the neighborhood around each location widens. Here, nine U.S. metropolitan areas from 1980 to 2010: the curves fall with distance, and the shape of the fall differs from one metro to the next."
-  link: "software/segregation/"
-  linktext: "The segregation package computes these profiles"
+  image: "img/fig/network-walkshed.webp"
+  alt: "A map of San Clemente, California, centered on a marked point: a large translucent red circle covers everything within one mile as the crow flies, while a much smaller blue polygon covers only the streets reachable within a one-mile walk; the polygon is a fraction of the circle across the hilly, cul-de-sac neighborhood."
+  title: "A neighborhood is what you can walk to"
+  text: "Segregation indices usually draw each neighborhood as a circle. Measured along the street network instead, the neighborhood shrinks to the streets a person can actually reach — and with it the city's measured segregation: across all 380 U.S. metropolitan areas, the network-based measure runs about 20 percent higher, and the gap is widest where streets are winding and sparsely connected."
+  link: "https://doi.org/10.1177/23998083231197956"
+  linktext: "Read the paper in Environment and Planning B"
 book:
   title: "Urban Analysis & Spatial Science"
   subtitle: "Theory, Methods, & Code for Studying Neighborhoods, Cities, & Regions"
