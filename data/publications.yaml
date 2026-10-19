@@ -35,6 +35,7 @@ working:
   - title: "Space Is Not a Control Group: Quasi-Experimental Design in the Presence of Spatial Dependence"
     authors: "Elijah Knaap"
     note: "Difference-in-differences cannot recover the effect of a treatment defined by location, even with a spatial model; only a spatial fixed-effects design can, as the Purple Line's effect on Montgomery County rents shows."
+    page: "projects/rentpanel/"
 
 articles:
   - title: "segregation: Segregation Analysis, Inference, and Decomposition in Python"

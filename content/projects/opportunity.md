@@ -3,7 +3,7 @@ title: "Modeling the Geography of Opportunity for Fair Housing Policy"
 funder: "HUD"
 years: "2014–2016"
 status: "Completed"
-weight: 5
+weight: 60
 summary: "Opportunity models behind HUD's evaluation of the Baltimore Housing Mobility Program and the Baltimore regional plan."
 image: "img/fig/bhmp-opportunity.svg"
 alt: "Line chart of mean neighborhood opportunity scores from 2003 to 2013 for three types of housing assistance; the Baltimore Housing Mobility Program line rises well above housing choice vouchers and public housing."

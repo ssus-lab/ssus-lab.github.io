@@ -4,7 +4,7 @@ funder: "Bill & Melinda Gates Foundation, INV-024366"
 years: "2020–2024"
 status: "Completed"
 role: "Co-PI (PI: Sergio Rey)"
-weight: 8
+weight: 90
 software: ["geosnap"]
 summary: "Neighborhood analysis methods for education research, delivered through geosnap."
 image: "img/fig/la-school-lisa.webp"

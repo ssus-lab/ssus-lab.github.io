@@ -8,16 +8,16 @@ areas:
     icon: "structure"
     text: "How land, housing, and jobs are arranged across a region."
     examples: ["Land and housing markets", "Economic geography", "Agglomeration", "Urban form"]
-  - name: "Sorting and change"
+  - name: "Sorting and Change"
     icon: "sorting"
     text: "Who lives where, and how neighborhoods change."
     examples: ["Residential sorting", "Segregation", "Neighborhood change", "Neighborhood effects"]
-  - name: "Access and policy"
+  - name: "Access and Policy"
     icon: "inequality"
     text: "Who can reach what, and how public decisions change it."
     examples: ["Access to opportunity", "Schools", "Public health", "Transportation", "Fair housing"]
 methods:
-  label: "How we work"
+  label: "How We Work"
   items: ["Spatial econometrics", "Spatial statistics", "Bayesian estimation at scale", "Discrete choice models", "Measurement models", "Areal interpolation", "Regionalization", "Network accessibility", "Open-source software"]
 figure:
   image: "img/fig/multiscalar-profiles.webp"

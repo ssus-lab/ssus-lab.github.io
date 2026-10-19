@@ -4,7 +4,7 @@ funder: "NSF POSE Phase II, award 2345820"
 years: "2024–2027"
 status: "Current"
 role: "Co-PI (PI: Sergio Rey)"
-weight: 4
+weight: 50
 software: ["segregation", "tobler", "geosnap"]
 summary: "Long-term viability for an open-source ecosystem for spatial data science, with PySAL at its core."
 image: "img/fig/pysal-logo.webp"

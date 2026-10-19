@@ -2,7 +2,7 @@
 title: "A Bayesian Lagrange-Multiplier Framework for Spatial Cross-Section, Panel, and Flow Models"
 status: "Current"
 venue: "Spatial Economic Analysis, forthcoming"
-weight: 3
+weight: 40
 software: ["neighbayes"]
 summary: "Bayesian counterparts of the Lagrange-multiplier tests that spatial econometrics uses to choose a specification."
 image: "img/fig/lmbayes-columbus-posteriors.webp"

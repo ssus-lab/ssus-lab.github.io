@@ -4,7 +4,7 @@ funder: "Robert Schalkenbach Foundation"
 years: "2023–2024"
 status: "Completed"
 role: "Co-PI (PI: Chester Harvey)"
-weight: 9
+weight: 100
 summary: "Proof-of-concept models of land value built with spatial econometric methods."
 ---
 
