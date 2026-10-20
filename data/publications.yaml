@@ -37,6 +37,11 @@ working:
     note: "Difference-in-differences cannot recover the effect of a treatment defined by location, even with a spatial model; only a spatial fixed-effects design can, as the Purple Line's effect on Montgomery County rents shows."
     page: "projects/rentpanel/"
 
+  - title: "Zoning and Segregation in Principal Cities and Suburbs: Another Look at the Examples of Houston and Dallas, Texas"
+    authors: "Elijah Knaap"
+    note: "Houston and Dallas, compared between metropolises, are statistically indistinguishable in Black–White segregation; inside each region, the city of Dallas is significantly more segregated than its suburbs and the city of Houston no longer is, a difference the comparison reaches only when it runs at the scale zoning operates at."
+    page: "projects/texas-segregation/"
+
 articles:
   - title: "segregation: Segregation Analysis, Inference, and Decomposition in Python"
     authors: "Renan X. Cortes, Elijah Knaap, Sergio J. Rey"
