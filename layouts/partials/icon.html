@@ -29,10 +29,10 @@
   </g>
   <path d="M8 8 L40 40" stroke-dasharray="2 3.2" opacity=".5"/>
 {{ else if eq $name "inequality" }}
-  {{/* A Lorenz curve under the line of equality. */}}
+  {{/* A Lorenz curve under the line of equality, on the bid-rent icon's axes; the dot is its point farthest from equality, where the gap is widest. No dots on its ends, which would hide the axes' corner. */}}
   <path d="M6 6 V42 H42" opacity=".7"/>
   <path d="M7 41 L41 7" stroke-dasharray="2 3.2" opacity=".55"/>
   <path d="M7 41 C22 40 33 33 41 7" stroke-width="2.4"/>
-  <circle cx="7" cy="41" r="2.6" fill="currentColor"/><circle cx="41" cy="7" r="2.6" fill="currentColor"/>
+  <circle cx="27.66" cy="32.39" r="2.6" fill="currentColor"/>
 {{ end }}
 </svg>
