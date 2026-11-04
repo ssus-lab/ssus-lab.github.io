@@ -45,11 +45,11 @@ book:
 
 SSUS is the research lab of [Elijah Knaap](people/eli-knaap/) at the
 University of California, Irvine. We draw on urban economics, sociology, and
-geography to explain why activity concentrates where it does, how places
-change, and who gains or loses as they do.
+geography to explain why activity concentrates where it does, how
+neighborhoods and regions change, and who gains or loses from the change.
 
-People and places are connected and interdependent. Understanding network
-structure and relationships embedded in space requires formal geographic
-models: we develop spatial econometric and Bayesian models of spillovers,
-sorting, and flows, and the sparse numerical tools that make them feasible for
-whole metropolitan regions.
+People and places depend on one another through the networks that connect
+them in space, such as commutes, moves, markets, and the influence of
+neighbors. We build the formal geographic models those dependencies call for:
+spatial econometric and Bayesian models of spillovers, sorting, and flows, with
+the sparse solvers that make them feasible for whole metropolitan regions.
