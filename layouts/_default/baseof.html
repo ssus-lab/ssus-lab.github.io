@@ -26,6 +26,19 @@
   <meta property="og:image" content="{{ $og.src }}">
   <meta property="og:image:alt" content="{{ $og.alt }}">
   <meta name="twitter:card" content="{{ $og.card }}">
+  {{/* Google Scholar's tags, on a project page whose working paper has a PDF: the first such entry in publications.yaml. */}}
+  {{ if eq .Section "projects" }}
+    {{ $here := strings.TrimPrefix "/" .RelPermalink }}
+    {{ $wp := false }}
+    {{ range hugo.Data.publications.working }}{{ if and (not $wp) (eq .page $here) .url }}{{ $wp = . }}{{ end }}{{ end }}
+    {{ with $wp }}
+  <meta name="citation_title" content="{{ .title }}">
+  {{ range split (replace .authors " and " ", ") ", " }}<meta name="citation_author" content="{{ . }}">
+  {{ end }}<meta name="citation_publication_date" content="{{ .year }}">
+  <meta name="citation_technical_report_institution" content="Spatial Science and Urban Systems, University of California, Irvine">
+  <meta name="citation_pdf_url" content="{{ .url | absURL }}">
+    {{ end }}
+  {{ end }}
   {{ with site.Params.googleAnalyticsID }}
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
   <script>

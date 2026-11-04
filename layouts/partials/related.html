@@ -25,9 +25,9 @@
   <ul class="rel-pubs">
     {{ range . }}
     <li>
-      {{ $href := "" }}{{ with .doi }}{{ $href = printf "https://doi.org/%s" . }}{{ else with .url }}{{ $href = . }}{{ end }}
+      {{ $href := "" }}{{ with .doi }}{{ $href = printf "https://doi.org/%s" . }}{{ else with .url }}{{ $href = partial "news-url.html" . }}{{ end }}
       {{ with $href }}<a href="{{ . }}">{{ end }}{{ .title }}{{ if $href }}</a>{{ end }}
-      <span class="rel-meta">{{ with .venue }}<em>{{ . }}</em>{{ else with .review }}Under review at <em>{{ . }}</em>{{ else }}Working paper{{ end }}{{ with .year }}, {{ . }}{{ end }}{{ if and .venue (not .year) (not .doi) }}, forthcoming{{ end }}</span>
+      <span class="rel-meta">{{ with .venue }}<em>{{ . }}</em>{{ else with .review }}Under review at <em>{{ . }}</em>{{ else }}Working paper{{ end }}{{ with .year }}, {{ . }}{{ end }}{{ if and .venue (not .year) (not .doi) }}, forthcoming{{ end }}{{ if and (not .doi) (strings.HasSuffix (.url | default "") ".pdf") }} · PDF{{ end }}</span>
     </li>
     {{ end }}
   </ul>

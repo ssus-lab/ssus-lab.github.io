@@ -38,7 +38,7 @@
     <div class="section-head"><h2>Working papers</h2></div>
     <ul class="rows pubs">
       {{ range $d.working }}
-      <li><span class="title">{{ if .page }}<a href="{{ .page | relURL }}">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</span><p class="summary">{{ .authors }}. {{ .note }}{{ with .review }} Under review at <em>{{ . }}</em>.{{ end }}</p></li>
+      <li><span class="title">{{ if .page }}<a href="{{ .page | relURL }}">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</span><p class="summary">{{ .authors }}. {{ .note }}{{ with .review }} Under review at <em>{{ . }}</em>.{{ end }}{{ with .url }} <a href="{{ partial "news-url.html" . }}">Working paper (PDF)</a>{{ end }}</p></li>
       {{ end }}
     </ul>
   </section>

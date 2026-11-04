@@ -3,8 +3,9 @@
 # the home page (the first four flagged show). `date` (YYYY-MM-DD: publication
 # for articles, acceptance for forthcoming) adds the entry to News. `page` names
 # the project or software page it belongs to, which then lists it.
-# A working paper's `url` (a preprint) links it there, and `review` names the
-# journal reviewing it.
+# A working paper's `url` (its PDF in static/papers/, the SSUS working-paper
+# format) links it there and gives its project page Google Scholar's citation
+# tags; `review` names the journal reviewing it.
 
 book:
   title: "Urban Analysis and Spatial Science: Theory, Methods, & Code for Studying Neighborhoods, Cities, & Regions"
@@ -25,6 +26,8 @@ working:
     authors: "Elijah Knaap and Sergio J. Rey"
     note: "A new spatial segregation index that locates where in a region's income distribution its geography is most organized."
     page: "projects/kindex/"
+    url: "papers/kindex.pdf"
+    year: 2026
   - title: "Separated, Polarized, and Factioned?"
     authors: "Elijah Knaap and Sergio J. Rey"
     note: "The empirical sequel: income segregation across every U.S. metropolitan region from 2010 to 2025."
@@ -34,11 +37,15 @@ working:
     note: "Unbiased log-determinants that bring Bayesian spatial autoregressive models to every U.S. census tract."
     review: "Journal of Geographical Systems"
     page: "projects/logdet/"
+    url: "papers/logdet.pdf"
+    year: 2026
   - title: "Space Is Not a Control Group: Quasi-Experimental Design in the Presence of Spatial Dependence"
     authors: "Elijah Knaap"
     note: "Difference-in-differences cannot recover the effect of a treatment defined by location, even with a spatial model; only a spatial fixed-effects design can, as the Purple Line's effect on Montgomery County rents shows."
     review: "Journal of Regional Science"
     page: "projects/rentpanel/"
+    url: "papers/rentpanel.pdf"
+    year: 2026
   - title: "Zoning and Segregation in Principal Cities and Suburbs: Another Look at the Examples of Houston and Dallas, Texas"
     authors: "Elijah Knaap"
     note: "Houston and Dallas, compared between metropolises, are statistically indistinguishable in Black–White segregation; inside each region, the city of Dallas is significantly more segregated than its suburbs and the city of Houston no longer is, a difference the comparison reaches only when it runs at the scale zoning operates at."
