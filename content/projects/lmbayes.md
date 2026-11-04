@@ -3,14 +3,13 @@ title: "A Bayesian Lagrange-Multiplier Framework for Spatial Cross-Section, Pane
 status: "Current"
 venue: "Spatial Economic Analysis, forthcoming"
 weight: 40
-short: "Bayesian LM tests"
 areas: ["methods"]
 software: ["neighbayes"]
 summary: "Bayesian counterparts of the Lagrange-multiplier tests that spatial econometrics uses to choose a specification."
-image: "img/fig/lmbayes-columbus-posteriors.webp"
-alt: "Eight histograms, one per Bayesian Lagrange-multiplier statistic on the Columbus crime data, each marked with the 5 percent chi-squared critical value as a dashed line and the posterior mean as a solid red line."
-fit: figure
-caption: "Posterior distributions of eight Bayesian LM statistics on the Columbus crime data. Each panel marks the 5% χ² critical value (dashed) and the posterior mean (solid); the spread of each posterior carries the uncertainty in the model's parameters into the test."
+image: "img/fig/lmbayes-columbus.webp"
+image_dark: "img/fig/lmbayes-columbus-dark.webp"
+alt: "Dot-and-interval chart, on a log scale, of six Bayesian Lagrange-multiplier statistics, each with its posterior mean, 95 percent posterior interval, and 5 percent chi-squared critical value. The robust LM-Error interval lies wholly below its critical value and the robust LM-Lag interval straddles it; the other four have posterior means above their critical values and intervals that reach below them."
+caption: "The six Bayesian LM statistics for the OLS fit to the Columbus crime data: each one's posterior mean (dot) and 95% posterior interval (bar), against its 5% χ² critical value (tick), on a log scale. Each test carries the uncertainty in the model's parameters into its own posterior."
 ---
 
 Lagrange-multiplier tests are the standard misspecification diagnostics of

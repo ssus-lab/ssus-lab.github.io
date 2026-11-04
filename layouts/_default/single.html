@@ -7,8 +7,8 @@
     {{ with $meta }}<p class="meta">{{ delimit . " · " }}</p>{{ end }}
   </header>
   {{ with .Params.image }}
-  <figure class="plate hero-fig{{ if eq $.Params.fit "contain" }} contain{{ end }}">
-    <img src="{{ . | relURL }}" alt="{{ $.Params.alt }}">
+  <figure class="plate hero-fig{{ if eq $.Params.fit "contain" }} contain{{ end }}{{ if $.Params.image_dark }} has-dark{{ end }}">
+    {{ partial "figure-img.html" (dict "page" $) }}
     {{ with $.Params.caption }}<figcaption>{{ . }}</figcaption>{{ end }}
   </figure>
   {{ end }}

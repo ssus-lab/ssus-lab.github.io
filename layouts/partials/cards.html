@@ -4,8 +4,8 @@
   {{ range .pages }}
   {{ $p := . }}
   <a class="card" href="{{ .RelPermalink }}">
-    <div class="plate{{ if in (slice "contain" "figure") .Params.fit }} contain{{ end }}">
-      {{ with .Params.image }}<img src="{{ . | relURL }}" alt="{{ $p.Params.alt }}" loading="lazy">{{ else }}{{ partial "orders.html" . }}{{ end }}
+    <div class="plate{{ if in (slice "contain" "figure") .Params.fit }} contain{{ end }}{{ if .Params.image_dark }} has-dark{{ end }}">
+      {{ if .Params.image }}{{ partial "figure-img.html" (dict "page" $p "lazy" true) }}{{ else }}{{ partial "orders.html" . }}{{ end }}
     </div>
     <div class="card-body">
       {{ $eyebrow := slice }}{{ range slice .Params.years (cond $hide "" .Params.status) }}{{ with . }}{{ $eyebrow = $eyebrow | append . }}{{ end }}{{ end }}

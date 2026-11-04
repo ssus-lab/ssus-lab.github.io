@@ -22,7 +22,6 @@
         <h3>{{ .name }}</h3>
         <p class="area-text">{{ .text }}</p>
         <ul class="chips">{{ range .examples }}<li>{{ . }}</li>{{ end }}</ul>
-        {{ partial "area-projects.html" .key }}
       </div>
       {{ end }}
     </div>
@@ -32,7 +31,6 @@
       <div>
         <h3>{{ .label }}</h3>
         <ul class="chips methods">{{ range .items }}<li>{{ . }}</li>{{ end }}</ul>
-        {{ partial "area-projects.html" .key }}
       </div>
     </div>
     {{ end }}

@@ -2,9 +2,10 @@
 title: "Spatial Science and Urban Systems"
 statement: "We study the spatial organization of neighborhoods, cities, and regions."
 # Three ways into the work, each with examples rather than a boundary; the
-# methods that serve all three sit in one row beneath them. Each `key` matches
-# the `areas` of project pages: the band lists an area's projects, and the home
-# page's three project cards are the first-weighted project in each area.
+# methods that serve all three sit in one row beneath them. The areas are
+# subjects, not lists of projects, which change. Each `key` matches the `areas`
+# of project pages only to pick the home page's three project cards: the
+# first-weighted project in each area.
 areas:
   - name: "Structure and Form"
     key: "structure"

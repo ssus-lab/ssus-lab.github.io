@@ -3,7 +3,6 @@ title: "A Spatial Concordance Index of Income Segregation"
 status: "Current"
 role: "With Sergio Rey"
 weight: 10
-short: "Spatial concordance index"
 areas: ["sorting"]
 summary: "A new spatial segregation index that locates where in a region's income distribution its geography is most organized."
 image: "img/fig/kindex-la-components.webp"

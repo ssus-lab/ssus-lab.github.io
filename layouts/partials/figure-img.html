@@ -1,0 +1,9 @@
+{{/* A page's figure. Where the page also has `image_dark`, both are written and the theme shows one, as the header lockup does. Pass a dict: page, and lazy for cards. */}}
+{{ $p := .page }}
+{{ $lazy := cond (.lazy | default false) ` loading="lazy"` "" }}
+{{ with $p.Params.image_dark }}
+<img class="when-light" src="{{ $p.Params.image | relURL }}" alt="{{ $p.Params.alt }}"{{ $lazy | safeHTMLAttr }}>
+<img class="when-dark" src="{{ . | relURL }}" alt="{{ $p.Params.alt }}"{{ $lazy | safeHTMLAttr }}>
+{{ else }}
+<img src="{{ $p.Params.image | relURL }}" alt="{{ $p.Params.alt }}"{{ $lazy | safeHTMLAttr }}>
+{{ end }}

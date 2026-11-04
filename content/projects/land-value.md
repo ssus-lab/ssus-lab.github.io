@@ -5,7 +5,6 @@ years: "2023–2024"
 status: "Completed"
 role: "Co-PI (PI: Chester Harvey)"
 weight: 100
-short: "Land value models"
 areas: ["structure"]
 software: ["neighbayes"]
 summary: "A spatial Durbin approach to estimating land value from property sales, with a proof of concept in Baltimore City."

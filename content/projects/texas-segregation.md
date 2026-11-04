@@ -3,10 +3,13 @@ title: "Zoning and Segregation in Principal Cities and Suburbs: Another Look at 
 status: "Current"
 venue: "Annals of Regional Science, under review"
 weight: 45
-short: "Zoning in Houston and Dallas"
 areas: ["sorting", "policy"]
 software: ["segregation"]
 summary: "Houston's lack of zoning is the standing natural experiment in land-use scholarship; re-run the comparison inside each metropolis, principal city against suburbs, and the answer changes."
+image: "img/fig/texas-cities.webp"
+image_dark: "img/fig/texas-cities-dark.webp"
+alt: "Two maps of census tracts shaded by the share of residents who are non-Hispanic Black, Dallas–Fort Worth at left and Houston at right, each principal city outlined in orange. The city of Dallas covers a small part of its metro and holds 18 percent of its residents; the city of Houston, a large, irregular area at the center of its metro, holds 33 percent."
+caption: "Share of residents who are non-Hispanic Black, by census tract, ACS 2017–2021, in the Dallas–Fort Worth and Houston metropolitan areas, each principal city outlined. The city of Dallas holds 18 percent of its metro's residents, the city of Houston 33 percent."
 ---
 
 Houston has no zoning, and that fact has made it the standing natural
@@ -22,8 +25,8 @@ instrument, and its effect operates through competition among jurisdictions
 through differences *between* metropolises, which average the mechanism away.
 Re-partitioning each region into principal city versus suburbs and testing
 within each also reveals the two cities as poor partners for the comparison:
-Houston's principal city holds two-thirds of its region's population, Dallas's
-under a quarter.
+the city of Houston holds a third of its region's residents, the city of Dallas
+under a fifth.
 
 Measured with the spatial information theory index, chosen because an additive
 decomposition across the city–suburb partition is built into it, and inferred

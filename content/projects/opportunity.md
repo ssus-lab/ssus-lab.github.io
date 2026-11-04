@@ -4,7 +4,6 @@ funder: "HUD"
 years: "2014–2016"
 status: "Completed"
 weight: 60
-short: "Geography of opportunity"
 areas: ["policy"]
 summary: "Opportunity models behind HUD's evaluation of the Baltimore Housing Mobility Program and the Baltimore regional plan."
 image: "img/fig/bhmp-opportunity.svg"

@@ -3,14 +3,13 @@ title: "Fast and Unbiased Log-Determinants for Large Spatial Autoregressive Mode
 status: "Current"
 weight: 30
 venue: "Journal of Geographical Systems, under review"
-short: "Fast log-determinants"
 areas: ["methods"]
 software: ["neighbayes", "sparsax"]
 summary: "Log-determinant methods that make Bayesian spatial autoregressive models fast and unbiased at the scale of every U.S. census tract."
-image: "img/fig/logdet-bias-tracts.webp"
-alt: "Two line charts of bias in the posterior mean of rho against the true value of rho, negative values at left and positive at right. Six log-determinant methods lie on zero through the interior; near rho of 0.9 and above, the Barry–Pace line climbs to about 1.4 posterior standard deviations, and two others rise modestly."
-fit: figure
-caption: "Bias in the posterior mean of ρ, in posterior standard deviations, by true ρ, for a spatial autoregressive model of all 85,230 U.S. census tracts. Factorize-and-interpolate and Pace–LeSage lie on zero throughout; Barry–Pace lifts off near either boundary, and Smirnov–Anselin and grid-and-spline follow, more modestly, at ±0.95."
+image: "img/fig/logdet-bias.webp"
+image_dark: "img/fig/logdet-bias-dark.webp"
+alt: "Line chart of bias in the posterior mean of rho, in posterior standard deviations, against true rho from 0.3 to 0.95. Factorize-and-interpolate, stochastic Chebyshev, and Pace–LeSage lie on zero throughout; Barry–Pace lifts off at 0.85 and reaches 1.4 at 0.95; Smirnov–Anselin and grid and spline rise to 0.18 and 0.13 at 0.95."
+caption: "Bias in the posterior mean of ρ, in posterior standard deviations, by true ρ, for a spatial autoregressive model of all 85,230 U.S. census tracts. Factorize-and-interpolate, stochastic Chebyshev, and Pace–LeSage lie on zero; Barry–Pace lifts off near the boundary and reaches 1.4 standard deviations at ρ = 0.95, and Smirnov–Anselin and grid and spline follow more modestly. Bands span the probe draws of the two stochastic methods. Positive ρ; the paper also reports the negative range."
 ---
 
 Fitting a spatial autoregressive model means evaluating the log-determinant of
