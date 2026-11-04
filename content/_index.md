@@ -28,7 +28,7 @@ methods:
 figure:
   image: "img/fig/network-walkshed.webp"
   alt: "A map of San Clemente, California, centered on a marked point: a large translucent red circle covers everything within one mile as the crow flies, while a much smaller blue polygon covers only the streets reachable within a one-mile walk; the polygon is a fraction of the circle across the hilly, cul-de-sac neighborhood."
-  title: "A neighborhood is what you can walk to"
+  title: "The built environment defines the neighborhood"
   text: "Segregation indices usually draw each neighborhood as a circle. Measured along the street network instead, the neighborhood shrinks to the streets a person can actually reach — and with it the city's measured segregation: across all 380 U.S. metropolitan areas, the network-based measure runs about 20 percent higher, and the gap is widest where streets are winding and sparsely connected."
   link: "https://doi.org/10.1177/23998083231197956"
   linktext: "Read the paper in Environment and Planning B"
