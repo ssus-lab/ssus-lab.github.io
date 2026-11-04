@@ -1,6 +1,10 @@
 # Workshop materials in public repositories, newest first. Titles and years
 # follow the CV's workshops section; add a workshop here when its repo is public.
 - title: "Spatial Data Analysis and Econometrics with PySAL"
+  venue: "North American Regional Science Council"
+  year: 2026
+  url: "https://github.com/knaaptime/workshop-pysal-narsc26"
+- title: "Spatial Data Analysis and Econometrics with PySAL"
   venue: "Western Regional Science Association"
   year: 2026
   url: "https://github.com/knaaptime/workshop-pysal-wrsa26"

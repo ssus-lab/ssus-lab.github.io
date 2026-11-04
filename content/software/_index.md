@@ -5,7 +5,7 @@ groups:
   - key: ssus
     name: "SSUS"
     url: ""
-    blurb: "Numerical and statistical tools developed in the lab."
+    blurb: "Models developed in the lab, the numerical tools they run on, and Bayesian statistics for the classroom."
   - key: oturns
     name: "oturns"
     url: "https://github.com/oturns"

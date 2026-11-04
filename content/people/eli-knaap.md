@@ -21,4 +21,7 @@ He is a faculty affiliate of the
 [Center for Population, Inequality, and Policy](https://www.cpip.uci.edu/about.php)
 and the [Institute of Transportation Studies](https://its.uci.edu/about/), lead
 developer of [geosnap](https://github.com/oturns/geosnap), and a core developer
-and steering committee member of [PySAL](https://pysal.org).
+and steering committee member of [PySAL](https://pysal.org). He serves on the
+editorial boards of *Growth and Change*, *Reaching Regions*, and *Regional
+Science Policy & Practice*, and as a Councillor-at-Large of the North American
+Regional Science Council.

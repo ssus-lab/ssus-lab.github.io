@@ -2,23 +2,29 @@
 title: "Spatial Science and Urban Systems"
 statement: "We study the spatial organization of neighborhoods, cities, and regions."
 # Three ways into the work, each with examples rather than a boundary; the
-# methods that serve all three sit in one row beneath them.
+# methods that serve all three sit in one row beneath them. Each `key` matches
+# the `areas` of project pages: the band lists an area's projects, and the home
+# page's three project cards are the first-weighted project in each area.
 areas:
   - name: "Structure and Form"
+    key: "structure"
     icon: "structure"
     text: "How land, housing, and jobs are arranged across a region."
     examples: ["Land and housing markets", "Economic geography", "Agglomeration", "Urban form"]
   - name: "Sorting and Change"
+    key: "sorting"
     icon: "sorting"
     text: "Who lives where, and how neighborhoods change."
-    examples: ["Residential sorting", "Segregation", "Neighborhood change", "Neighborhood effects"]
+    examples: ["Residential sorting", "Segregation", "Income polarization", "Neighborhood change", "Neighborhood effects"]
   - name: "Access and Policy"
+    key: "policy"
     icon: "inequality"
     text: "Who can reach what, and how public decisions change it."
-    examples: ["Access to opportunity", "Schools", "Public health", "Transportation", "Fair housing"]
+    examples: ["Access to opportunity", "Schools", "Public health", "Transportation", "Fair housing", "Zoning"]
 methods:
   label: "How We Work"
-  items: ["Spatial econometrics", "Spatial statistics", "Bayesian estimation at scale", "Discrete choice models", "Measurement models", "Areal interpolation", "Regionalization", "Network accessibility", "Open-source software"]
+  key: "methods"
+  items: ["Spatial econometrics", "Spatial statistics", "Spatial causal inference", "Bayesian estimation at scale", "Discrete choice models", "Location models", "Measurement models", "Areal interpolation", "Regionalization", "Network accessibility", "Open-source software"]
 figure:
   image: "img/fig/network-walkshed.webp"
   alt: "A map of San Clemente, California, centered on a marked point: a large translucent red circle covers everything within one mile as the crow flies, while a much smaller blue polygon covers only the streets reachable within a one-mile walk; the polygon is a fraction of the circle across the hilly, cul-de-sac neighborhood."

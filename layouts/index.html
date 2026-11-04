@@ -22,6 +22,7 @@
         <h3>{{ .name }}</h3>
         <p class="area-text">{{ .text }}</p>
         <ul class="chips">{{ range .examples }}<li>{{ . }}</li>{{ end }}</ul>
+        {{ partial "area-projects.html" .key }}
       </div>
       {{ end }}
     </div>
@@ -31,6 +32,7 @@
       <div>
         <h3>{{ .label }}</h3>
         <ul class="chips methods">{{ range .items }}<li>{{ . }}</li>{{ end }}</ul>
+        {{ partial "area-projects.html" .key }}
       </div>
     </div>
     {{ end }}
@@ -94,7 +96,18 @@
   {{ with site.GetPage "/projects" }}
   <section class="section">
     <div class="section-head"><h2>{{ .Title }}</h2><a href="{{ .RelPermalink }}">All projects</a></div>
-    {{ partial "cards.html" (dict "pages" (first 3 .Pages.ByWeight)) }}
+    {{/* One project per research area: the first by weight in each area not already picked. */}}
+    {{ $all := .Pages.ByWeight }}
+    {{ $picked := slice }}
+    {{ range $.Params.areas }}
+      {{ $key := .key }}{{ $found := false }}
+      {{ range $all }}
+        {{ if and (not $found) (in (.Params.areas | default slice) $key) (not (in $picked .RelPermalink)) }}
+          {{ $picked = $picked | append .RelPermalink }}{{ $found = true }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+    {{ partial "cards.html" (dict "pages" (where $all "RelPermalink" "in" $picked)) }}
   </section>
   {{ end }}
 

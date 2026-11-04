@@ -2,6 +2,9 @@
 title: "Fast and Unbiased Log-Determinants for Large Spatial Autoregressive Models"
 status: "Current"
 weight: 30
+venue: "Journal of Geographical Systems, under review"
+short: "Fast log-determinants"
+areas: ["methods"]
 software: ["neighbayes", "sparsax"]
 summary: "Log-determinant methods that make Bayesian spatial autoregressive models fast and unbiased at the scale of every U.S. census tract."
 image: "img/fig/logdet-bias-tracts.webp"

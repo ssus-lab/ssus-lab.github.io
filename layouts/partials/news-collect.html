@@ -3,9 +3,11 @@
     1. data/news.yaml: events, talks, and other hand-written items;
     2. data/publications.yaml: any article or forthcoming entry with a `date`;
     3. each software page's `repo`: its latest GitHub release of the past year,
-       read from the repository's releases.atom feed.
+       from the API's releases/latest, which skips drafts, prereleases, and bare
+       tags (releases.atom lists bare tags too, so a stray tag passed there as a
+       release). In CI the workflow's GITHUB_TOKEN lifts the API's rate limit.
   Each item is a dict: key (sortable date string), date (time), approx, kind,
-  title, text, url. A feed that cannot be fetched is skipped with a warning,
+  title, text, url. A release that cannot be fetched is skipped with a warning,
   so a network failure never breaks the build. Call with partialCached.
 */}}
 {{ $items := slice }}
@@ -41,23 +43,20 @@
 {{ end }}
 
 {{ $cutoff := now.AddDate -1 0 0 }}
+{{ $headers := dict "Accept" "application/vnd.github+json" }}
+{{ with os.Getenv "GITHUB_TOKEN" }}{{ $headers = merge $headers (dict "Authorization" (printf "Bearer %s" .)) }}{{ end }}
 {{ range where site.RegularPages "Section" "software" }}
   {{ $pkg := . }}
   {{ with .Params.repo }}
-    {{ $feedURL := printf "%s/releases.atom" (strings.TrimSuffix "/" .) }}
-    {{ with try (resources.GetRemote $feedURL) }}
+    {{ $apiURL := printf "%s/releases/latest" (replace (strings.TrimSuffix "/" .) "https://github.com/" "https://api.github.com/repos/") }}
+    {{ with try (resources.GetRemote $apiURL (dict "headers" $headers)) }}
       {{ with .Err }}
-        {{ warnf "news: skipped %s: %s" $feedURL . }}
+        {{ warnf "news: skipped %s: %s" $apiURL . }}
       {{ else with .Value }}
-        {{ $feed := .Content | transform.Unmarshal }}
-        {{ $entries := $feed.entry }}
-        {{ if reflect.IsMap $entries }}{{ $entries = slice $entries }}{{ end }}
+        {{ $rel := .Content | transform.Unmarshal }}
         {{ $latest := false }}
-        {{ range $entries }}
-          {{ $tag := path.Base (index .link "-href") }}
-          {{ if and (not $latest) (not (in (slice "v0.0.0" "0.0.0") $tag)) }}
-            {{ $latest = dict "tag" $tag "date" (time.AsTime .updated) "url" (index .link "-href") }}
-          {{ end }}
+        {{ if and $rel.tag_name $rel.published_at (not (in (slice "v0.0.0" "0.0.0") $rel.tag_name)) }}
+          {{ $latest = dict "tag" $rel.tag_name "date" (time.AsTime $rel.published_at) "url" $rel.html_url }}
         {{ end }}
         {{ with $latest }}
           {{ if .date.After $cutoff }}

@@ -3,7 +3,7 @@ title: "sparsax"
 code: true
 pypi: true
 org: ssus
-weight: 1
+weight: 3
 role: "Lead"
 repo: "https://github.com/knaaptime/sparsax"
 docs: "https://knaaptime.com/sparsax/"

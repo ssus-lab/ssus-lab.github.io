@@ -3,7 +3,7 @@ title: "bayesplain"
 code: true
 pypi: true
 org: ssus
-weight: 3
+weight: 5
 role: "Lead"
 repo: "https://github.com/knaaptime/bayesplain"
 docs: "https://knaaptime.com/bayesplain/dev/"

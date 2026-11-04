@@ -10,11 +10,17 @@ enableRobotsTXT = true
   home = ["html"]
   section = ["html"]
 
-# News reads each package's releases.atom at build time; refetch after six hours.
+# News reads each package's latest release from GitHub's API at build time;
+# refetch after six hours.
 [caches]
   [caches.getresource]
     dir = ":cacheDir/:project"
     maxAge = "6h"
+
+# The defaults, plus the workflow's token, which lifts the API's rate limit.
+[security]
+  [security.funcs]
+    getenv = ['^HUGO_', '^CI$', '^GITHUB_TOKEN$']
 
 # static/img is also mounted under assets/, so a page's figure can be resized
 # into its link preview; declaring a mount replaces the defaults, so both

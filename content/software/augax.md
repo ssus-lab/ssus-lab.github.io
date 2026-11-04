@@ -3,7 +3,7 @@ title: "augax"
 code: true
 pypi: true
 org: ssus
-weight: 2
+weight: 4
 role: "Lead"
 repo: "https://github.com/knaaptime/augax"
 docs: "https://knaaptime.com/augax/"

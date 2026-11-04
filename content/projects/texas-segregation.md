@@ -3,6 +3,8 @@ title: "Zoning and Segregation in Principal Cities and Suburbs: Another Look at 
 status: "Current"
 venue: "Annals of Regional Science, under review"
 weight: 45
+short: "Zoning in Houston and Dallas"
+areas: ["sorting", "policy"]
 software: ["segregation"]
 summary: "Houston's lack of zoning is the standing natural experiment in land-use scholarship; re-run the comparison inside each metropolis, principal city against suburbs, and the answer changes."
 ---

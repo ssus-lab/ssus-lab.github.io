@@ -11,7 +11,7 @@
 items:
   - date: 2026-11-11
     title: "PySAL workshop and new segregation research at NARSC, Philadelphia"
-    text: "Knaap and Sergio Rey teach *Spatial Data Analysis and Econometrics with PySAL* on the first day of the North American Regional Science Council's annual meeting, November 11–14, and Knaap presents *Separated, Polarized, and Factioned?*"
+    text: "Knaap and Sergio Rey teach [*Spatial Data Analysis and Econometrics with PySAL*](https://github.com/knaaptime/workshop-pysal-narsc26) on the first day of the North American Regional Science Council's annual meeting, November 11–14, and Knaap presents *Separated, Polarized, and Factioned?*"
     url: "projects/kindex/"
 
   - date: 2026-09-28

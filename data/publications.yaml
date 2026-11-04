@@ -3,7 +3,8 @@
 # the home page (the first four flagged show). `date` (YYYY-MM-DD: publication
 # for articles, acceptance for forthcoming) adds the entry to News. `page` names
 # the project or software page it belongs to, which then lists it.
-# A working paper's `url` (a preprint) links it there.
+# A working paper's `url` (a preprint) links it there, and `review` names the
+# journal reviewing it.
 
 book:
   title: "Urban Analysis and Spatial Science: Theory, Methods, & Code for Studying Neighborhoods, Cities, & Regions"
@@ -20,7 +21,7 @@ forthcoming:
     page: "projects/lmbayes/"
 
 working:
-  - title: "Spatial Concordance Indices of Income Segregation"
+  - title: "A Spatial Concordance Index of Income Segregation"
     authors: "Elijah Knaap and Sergio J. Rey"
     note: "A new spatial segregation index that locates where in a region's income distribution its geography is most organized."
     page: "projects/kindex/"
@@ -31,16 +32,23 @@ working:
   - title: "Fast and Unbiased Log-Determinants for Large Spatial Autoregressive Models"
     authors: "Elijah Knaap"
     note: "Unbiased log-determinants that bring Bayesian spatial autoregressive models to every U.S. census tract."
+    review: "Journal of Geographical Systems"
     page: "projects/logdet/"
   - title: "Space Is Not a Control Group: Quasi-Experimental Design in the Presence of Spatial Dependence"
     authors: "Elijah Knaap"
     note: "Difference-in-differences cannot recover the effect of a treatment defined by location, even with a spatial model; only a spatial fixed-effects design can, as the Purple Line's effect on Montgomery County rents shows."
+    review: "Journal of Regional Science"
     page: "projects/rentpanel/"
-
   - title: "Zoning and Segregation in Principal Cities and Suburbs: Another Look at the Examples of Houston and Dallas, Texas"
     authors: "Elijah Knaap"
     note: "Houston and Dallas, compared between metropolises, are statistically indistinguishable in Black–White segregation; inside each region, the city of Dallas is significantly more segregated than its suburbs and the city of Houston no longer is, a difference the comparison reaches only when it runs at the scale zoning operates at."
+    review: "Annals of Regional Science"
     page: "projects/texas-segregation/"
+  - title: "Locating Harm Reduction Services to Mitigate Fatal Overdose Risk in Riverside County, California: An Integrated Spatial Modeling Approach"
+    authors: "Elijah Knaap, Sergio J. Rey, Alejandra Cabral, Jennifer Syvertsen"
+    note: "A multiscale conditional logit of where fatal overdoses occur, coupled to a maximum-coverage location model: even five sites with a 15 km reach cover only about a fifth of the modeled risk, a case for mobile and decentralized harm reduction."
+    review: "Computers, Environment and Urban Systems"
+    page: "projects/overdose/"
 
 articles:
   - title: "segregation: Segregation Analysis, Inference, and Decomposition in Python"
@@ -50,7 +58,6 @@ articles:
     doi: "10.21105/joss.11126"
     date: 2026-09-16
     page: "software/segregation/"
-    home: true
   - title: "Exploring Space-Time Interactions in Fatal Opioid Overdoses"
     authors: "Sergio J. Rey, Elijah Knaap, Alejandra Cabral, Jennifer Syvertsen"
     venue: "Geographical Analysis"
@@ -69,7 +76,6 @@ articles:
     venue: "Environment and Planning B: Urban Analytics and City Science"
     year: 2024
     doi: "10.1177/23998083231197956"
-    home: true
   - title: "Measuring two decades of urban spatial structure: The evolution of agglomeration economies in American metros"
     authors: "Elijah Knaap and Sergio J. Rey"
     venue: "Computers, Environment and Urban Systems"

@@ -2,6 +2,9 @@
 title: "Space Is Not a Control Group: Quasi-Experimental Design in the Presence of Spatial Dependence"
 status: "Current"
 weight: 20
+venue: "Journal of Regional Science, under review"
+short: "Space is not a control group"
+areas: ["structure", "methods"]
 summary: "Why difference-in-differences cannot recover the effect of a treatment defined by location, and the spatial fixed-effects design that can."
 image: "img/fig/rentpanel-simulation-gap.webp"
 alt: "Three panels from a Monte Carlo. Left: as unit heterogeneity becomes more spatially structured, the between-group estimate of the spatial parameter climbs from 0.5 to about 0.9 while the within-unit estimate stays on the true 0.5. Center: the between-group treatment effect falls from 10 to about 3 while the within-unit estimate stays on the true 10. Right: with no spatial dependence in the outcome, the within-unit estimate is zero and the between-group estimate is 0.735."

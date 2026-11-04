@@ -1,8 +1,10 @@
 ---
-title: "Spatial Concordance Indices of Income Segregation"
+title: "A Spatial Concordance Index of Income Segregation"
 status: "Current"
 role: "With Sergio Rey"
 weight: 10
+short: "Spatial concordance index"
+areas: ["sorting"]
 summary: "A new spatial segregation index that locates where in a region's income distribution its geography is most organized."
 image: "img/fig/kindex-la-components.webp"
 alt: "Two maps of the census tracts of Los Angeles and Orange counties, blue for tracts on the low-income side of an income cut and orange for tracts on the affluent side. At the $40,000 cut, the low-income side, in the north and in scattered clusters across central Los Angeles, carries 59 percent of the concordance; at the $150,000 cut, the blue core in central Los Angeles is larger and joined, and the largest orange component carries 72 percent."

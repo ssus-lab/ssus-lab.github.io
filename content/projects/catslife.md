@@ -5,6 +5,8 @@ years: "2020–2025"
 status: "Completed"
 role: "Co-Investigator (PI: C. Reynolds)"
 weight: 80
+short: "Neighborhoods over the life course"
+areas: ["sorting"]
 summary: "High-resolution neighborhood data joined to a thirty-year study of twins, siblings, and families."
 image: "img/fig/sd-rent-change.webp"
 alt: "Three maps of San Diego County shaded by median rent by census tract in 1990, 2000, and 2010."

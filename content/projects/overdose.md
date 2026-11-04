@@ -5,6 +5,8 @@ years: "2021–2025"
 status: "Completed"
 role: "Co-PI (PI: Jennifer Syvertsen)"
 weight: 70
+short: "Overdose in Riverside County"
+areas: ["policy"]
 summary: "Ethnography and spatial data science on where and why fatal overdoses occur in Riverside County."
 image: "img/fig/overdose-dashboard.webp"
 alt: "Map of Riverside County showing age-adjusted opioid overdose death rates by area in 2020, from the project dashboard."

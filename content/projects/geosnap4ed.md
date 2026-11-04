@@ -5,6 +5,8 @@ years: "2020–2024"
 status: "Completed"
 role: "Co-PI (PI: Sergio Rey)"
 weight: 90
+short: "Neighborhoods in education research"
+areas: ["policy"]
 software: ["geosnap"]
 summary: "Neighborhood analysis methods for education research, delivered through geosnap."
 image: "img/fig/la-school-lisa.webp"
