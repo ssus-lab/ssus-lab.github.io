@@ -362,8 +362,20 @@ strong, b { font-weight: 600; }
   .wrap { padding: 0 16px; }
   .statement { padding: 56px 0 48px; }
   .statement .body { font-size: 17px; }
-  .themes { grid-template-columns: 1fr; gap: 28px; }
-  .how { grid-template-columns: 1fr; gap: 14px 0; margin-top: 28px; }
+  .themes { grid-template-columns: 1fr; gap: 22px; }
+  .how { margin-top: 28px; }
+  /* research areas on a phone: each icon beside its heading, the examples set smaller and closer */
+  .themes > div { display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 0 14px; align-items: center; }
+  .themes > div > :not(.icon):not(h3) { grid-column: 1 / -1; }
+  .themes .icon, .how .icon { width: 36px; height: 36px; margin: 0; }
+  .themes h3 { margin: 0; }
+  .area-text { margin: 8px 0 6px; font-size: 15px; }
+  .band .chips { font-size: 14px; line-height: 1.55; gap: 0 14px; }
+  .band .chips li::before { width: 4px; height: 4px; margin-right: 6px; }
+  .how { grid-template-columns: 36px minmax(0, 1fr); gap: 0 14px; align-items: center; }
+  .how > div { display: contents; }
+  .how h3 { margin: 0; }
+  .how .chips { grid-column: 1 / -1; margin-top: 10px; }
   .feature-grid, .pubgrid, .people { grid-template-columns: 1fr; }
   .feature { padding-top: 48px; }
   .rows li { grid-template-columns: 1fr; }
