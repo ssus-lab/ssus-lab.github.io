@@ -40,6 +40,11 @@ working:
     page: "projects/logdet/"
     url: "papers/logdet.pdf"
     year: 2026
+  - title: "Bayesian Hausman Tests for Spatial Panels"
+    authors: "Elijah Knaap"
+    note: "One Bayes factor chooses among random, correlated random, spatially correlated random, and fixed effects without a prior on the effects, and names the assumption that fails."
+    review: "Spatial Economic Analysis"
+    page: "projects/hausman/"
   - title: "Space Is Not a Control Group: Quasi-Experimental Design in the Presence of Spatial Dependence"
     authors: "Elijah Knaap"
     note: "Difference-in-differences cannot recover the effect of a treatment defined by location, even with a spatial model; only a spatial fixed-effects design can, as the Purple Line's effect on Montgomery County rents shows."

@@ -6,6 +6,7 @@ paper's repository keeps, so it can be redrawn when they change:
     python tools/make_figs.py rentpanel ~/Dropbox/projects/rentpanel
     python tools/make_figs.py logdet    ~/Dropbox/projects/logdet
     python tools/make_figs.py lmbayes   ~/Dropbox/projects/lmbayes
+    python tools/make_figs.py hausman   ~/Dropbox/projects/hausman_bayespanel
     python tools/make_figs.py texas
 
 texas downloads 2017-2021 ACS tracts through geosnap and TIGER 2021 places on
@@ -141,6 +142,41 @@ def lmbayes(src, mode):
     ax.set_xlabel("Bayesian LM statistic (log scale)")
     fig.legend(loc="outside upper center", ncol=3, markerscale=0.6)
     save(fig, "lmbayes-columbus", mode)
+
+
+def hausman(src, mode):
+    """Posterior mean of rho under each effects model, by what the unit effects depend on (true rho 0.4)."""
+    d = pd.read_csv(Path(src) / "results" / "grid.csv")
+    d = d[d.v_sd == 1.0]  # the paper's baseline prior on the freed moments
+    kinds = ["independent", "own means", "neighbors' means", "unrelated field", "unrelated field x2"]
+    labels = ["Nothing", "Own covariate means", "Own and neighbors' means",
+              "A spatial field", "The field, twice the scale"]
+    models = ["RE", "CRE", "SRE", "FE"]
+    rho = d.groupby(["kind", "model"]).rho.mean().unstack()
+    chosen = (d.loc[d.groupby(["kind", "seed"]).prob.idxmax()]
+              .groupby("kind").model.agg(lambda m: m.value_counts().idxmax()))
+    print(rho.loc[kinds, models].round(3).to_string(), chosen.loc[kinds].to_string(), sep="\n")
+    s = ssus_style.SERIES[mode]
+    fig, ax = plt.subplots(figsize=SIZE, layout="constrained")
+    ax.axvline(0.4, color=MUTED[mode], lw=1, ls=(0, (3, 3)), zorder=1)
+    for i, k in enumerate(kinds):
+        y = len(kinds) - 1 - i
+        for j, m in enumerate(models):
+            dy = (1.5 - j) * 0.16
+            ax.plot(rho.loc[k, m], y + dy, "o", color=s[j], ms=7, zorder=3,
+                    label=m if i == 0 else None)
+            if m == chosen[k]:
+                ax.plot(rho.loc[k, m], y + dy, "o", mfc="none", mec=INK[mode], ms=14,
+                        mew=1.4, zorder=4, label="Chosen" if k == "own means" else None)
+    ax.set_yticks(range(len(kinds)), labels[::-1])
+    ax.tick_params(axis="y", labelcolor=INK[mode], labelsize=9)
+    ax.grid(axis="y", visible=False)
+    ax.set_ylim(-0.6, len(kinds) - 0.4)
+    ax.set_xlim(0.35, 1.0)
+    ax.set_xlabel("Posterior mean of $\\rho$ (true value 0.4)")
+    ax.set_ylabel("The unit effects depend on")
+    fig.legend(loc="outside upper center", ncol=5, markerscale=0.8)
+    save(fig, "hausman-rho", mode)
 
 
 METROS = (("Dallas–Fort Worth", "19100", "4819000"), ("Houston", "26420", "4835000"))
