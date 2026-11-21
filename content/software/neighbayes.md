@@ -5,7 +5,6 @@ pypi: true
 org: ssus
 weight: 1
 role: "Lead"
-status: "Pre-release"
 repo: "https://github.com/knaaptime/neighbayes"
 docs: "https://knaaptime.com/neighbayes/dev/"
 summary: "Bayesian estimation of spatial econometric models in Python: cross-sections, discrete outcomes, panels, and flows."
