@@ -1,5 +1,6 @@
 # Workshop materials in public repositories, newest first. Titles and years
 # follow the CV's workshops section; add a workshop here when its repo is public.
+# The Software page groups the entries: one row per title, one line per venue.
 - title: "Spatial Data Analysis and Econometrics with PySAL"
   venue: "North American Regional Science Council"
   year: 2026
