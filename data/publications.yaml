@@ -5,7 +5,8 @@
 # the project or software page it belongs to, which then lists it.
 # A working paper's `url` (its PDF in static/papers/, the SSUS working-paper
 # format) links it there and gives its project page Google Scholar's citation
-# tags; `review` names the journal reviewing it.
+# tags; `review` names the journal reviewing it, and `stage` replaces the
+# default "Under review" where the journal has asked for a revision.
 
 book:
   title: "Urban Analysis and Spatial Science: Theory, Methods, & Code for Studying Neighborhoods, Cities, & Regions"
@@ -43,6 +44,7 @@ working:
     authors: "Elijah Knaap"
     note: "Difference-in-differences cannot recover the effect of a treatment defined by location, even with a spatial model; only a spatial fixed-effects design can, as the Purple Line's effect on Montgomery County rents shows."
     review: "Journal of Regional Science"
+    stage: "Revise and resubmit"
     page: "projects/rentpanel/"
     url: "papers/rentpanel.pdf"
     year: 2026

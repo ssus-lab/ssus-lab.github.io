@@ -2,7 +2,7 @@
 title: "Space Is Not a Control Group: Quasi-Experimental Design in the Presence of Spatial Dependence"
 status: "Current"
 weight: 20
-venue: "Journal of Regional Science, under review"
+venue: "Journal of Regional Science, revise and resubmit"
 areas: ["structure", "methods"]
 summary: "Why difference-in-differences cannot recover the effect of a treatment defined by location, and the spatial fixed-effects design that can."
 image: "img/fig/rentpanel-effect.webp"
