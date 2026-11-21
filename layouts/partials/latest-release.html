@@ -1,0 +1,24 @@
+{{/*
+  A GitHub repository's latest release, from the API's releases/latest, which
+  skips drafts, prereleases, and bare tags (releases.atom lists bare tags too, so
+  a stray tag once passed there as a release). Pass the repo URL; returns a dict
+  (tag, date, url), or false where there is no release, the release is the
+  placeholder v0.0.0, or the fetch fails, which warns and never breaks the build.
+  In CI the workflow's GITHUB_TOKEN lifts the API's rate limit. Call with
+  partialCached, keyed by the URL, so each repo is fetched once per build.
+*/}}
+{{ $latest := false }}
+{{ $headers := dict "Accept" "application/vnd.github+json" }}
+{{ with os.Getenv "GITHUB_TOKEN" }}{{ $headers = merge $headers (dict "Authorization" (printf "Bearer %s" .)) }}{{ end }}
+{{ $apiURL := printf "%s/releases/latest" (replace (strings.TrimSuffix "/" .) "https://github.com/" "https://api.github.com/repos/") }}
+{{ with try (resources.GetRemote $apiURL (dict "headers" $headers)) }}
+  {{ with .Err }}
+    {{ warnf "release: skipped %s: %s" $apiURL . }}
+  {{ else with .Value }}
+    {{ $rel := .Content | transform.Unmarshal }}
+    {{ if and $rel.tag_name $rel.published_at (not (in (slice "v0.0.0" "0.0.0") $rel.tag_name)) }}
+      {{ $latest = dict "tag" $rel.tag_name "date" (time.AsTime $rel.published_at) "url" $rel.html_url }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ return $latest }}
