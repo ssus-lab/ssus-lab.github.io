@@ -1,5 +1,7 @@
 # Selected publications, newest first. Titles, authors, and DOIs checked against
-# Crossref; years are the journal issue years. `home: true` puts an entry on
+# Crossref; titles keep the journal's words and spelling but are set in title case
+# (major words capitalized, a package name as it is written); years are the
+# journal issue years. `home: true` puts an entry on
 # the home page (the first four flagged show). `date` (YYYY-MM-DD: publication
 # for articles, acceptance for forthcoming) adds the entry to News. `page` names
 # the project or software page it belongs to, which then lists it.
@@ -79,18 +81,18 @@ articles:
     doi: "10.1111/gean.70019"
     page: "projects/overdose/"
     home: true
-  - title: "The emergence of fentanyl in a stimulant landscape: Un/intentional use, social relations, and developing communities of care"
+  - title: "The Emergence of Fentanyl in a Stimulant Landscape: Un/intentional Use, Social Relations, and Developing Communities of Care"
     authors: "Jennifer Syvertsen, Alejandra Cabral, Elijah Knaap, Sergio Rey, Robin A. Pollini"
     venue: "International Journal of Drug Policy"
     year: 2025
     doi: "10.1016/j.drugpo.2025.104807"
     page: "projects/overdose/"
-  - title: "Segregated by design? Street network topological structure and the measurement of urban segregation"
+  - title: "Segregated by Design? Street Network Topological Structure and the Measurement of Urban Segregation"
     authors: "Elijah Knaap and Sergio J. Rey"
     venue: "Environment and Planning B: Urban Analytics and City Science"
     year: 2024
     doi: "10.1177/23998083231197956"
-  - title: "Measuring two decades of urban spatial structure: The evolution of agglomeration economies in American metros"
+  - title: "Measuring Two Decades of Urban Spatial Structure: The Evolution of Agglomeration Economies in American Metros"
     authors: "Elijah Knaap and Sergio J. Rey"
     venue: "Computers, Environment and Urban Systems"
     year: 2024
@@ -102,12 +104,12 @@ articles:
     year: 2024
     doi: "10.1177/01600176221116566"
     home: true
-  - title: "Changes in the economic status of neighbourhoods in US metropolitan areas from 1980 to 2010: Stability, growth and polarisation"
+  - title: "Changes in the Economic Status of Neighbourhoods in US Metropolitan Areas from 1980 to 2010: Stability, Growth and Polarisation"
     authors: "Wei Kang, Elijah Knaap, Sergio Rey"
     venue: "Urban Studies"
     year: 2022
     doi: "10.1177/00420980211042549"
-  - title: "Efficient regionalization for spatially explicit neighborhood delineation"
+  - title: "Efficient Regionalization for Spatially Explicit Neighborhood Delineation"
     authors: "Ran Wei, Sergio Rey, Elijah Knaap"
     venue: "International Journal of Geographical Information Science"
     year: 2021
