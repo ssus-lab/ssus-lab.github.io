@@ -1,11 +1,11 @@
-{{/* Projects as image cards. Pass a dict: pages, and hideStatus where a section heading already names the status. Pages without an image get the lattice figure as a placeholder. */}}
+{{/* Projects as image cards. Pass a dict: pages, and hideStatus where a section heading already names the status. A page's `card_image` (with `card_alt`) stands in for its figure where the figure is too detailed to read at card size. Pages without an image get the lattice figure as a placeholder. */}}
 {{ $hide := .hideStatus | default false }}
 <div class="cards">
   {{ range .pages }}
   {{ $p := . }}
   <a class="card" href="{{ .RelPermalink }}">
-    <div class="plate{{ if in (slice "contain" "figure") .Params.fit }} contain{{ end }}{{ if .Params.image_dark }} has-dark{{ end }}">
-      {{ if .Params.image }}{{ partial "figure-img.html" (dict "page" $p "lazy" true) }}{{ else }}{{ partial "orders.html" . }}{{ end }}
+    <div class="plate{{ if in (slice "contain" "figure") .Params.fit }} contain{{ end }}{{ if and .Params.image_dark (not .Params.card_image) }} has-dark{{ end }}">
+      {{ with .Params.card_image }}<img src="{{ . | relURL }}" alt="{{ $p.Params.card_alt | default $p.Params.alt }}" loading="lazy">{{ else }}{{ if .Params.image }}{{ partial "figure-img.html" (dict "page" $p "lazy" true) }}{{ else }}{{ partial "orders.html" . }}{{ end }}{{ end }}
     </div>
     <div class="card-body">
       {{ $eyebrow := slice }}{{ range slice .Params.years (cond $hide "" .Params.status) }}{{ with . }}{{ $eyebrow = $eyebrow | append . }}{{ end }}{{ end }}
